@@ -1,0 +1,45 @@
+# Auto Study - 生产环境配置
+# 生产环境的特定配置，注重稳定性和安全性
+
+# 浏览器配置（生产环境使用无头模式）
+browser:
+  headless: true   # 生产环境无头运行
+  timeout: 45000   # 稳定的超时设置
+
+# 系统配置（生产环境适中日志）
+system:
+  log_level: "INFO"  # 生产环境标准日志级别
+  log_file: "logs/prod.log"
+  max_log_size: 20971520  # 20MB
+  backup_count: 10
+
+# 学习配置（生产环境保守设置）
+learning:
+  check_interval: 60        # 较长的检查间隔
+  max_learning_time: 14400  # 4小时限制
+
+# 反检测配置（生产环境全面启用）
+anti_detection:
+  mouse_movement: true
+  keyboard_simulation: true
+  random_delays: true
+  viewport_randomization: true
+
+# 性能配置（生产环境优化）
+performance:
+  max_concurrent_tabs: 3  # 减少并发以提高稳定性
+  memory_limit: 256       # 更严格的内存限制
+  cache_size: 50
+
+# 安全配置
+security:
+  encrypt_credentials: true      # 强制加密凭据
+  clear_browser_data: true       # 清理浏览器数据
+  disable_extensions: true       # 禁用扩展
+  private_mode: true            # 隐私模式
+
+# 监控配置
+monitoring:
+  health_check_interval: 300  # 健康检查间隔（秒）
+  error_threshold: 5          # 错误阈值
+  restart_on_failure: true    # 失败时自动重启

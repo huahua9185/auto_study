@@ -1,0 +1,50 @@
+# Auto Study - 默认配置文件
+# 这是系统的基础配置，包含所有默认设置
+
+# 浏览器配置
+browser:
+  headless: false  # 是否使用无头模式
+  width: 1920      # 浏览器窗口宽度
+  height: 1080     # 浏览器窗口高度
+  timeout: 30000   # 页面加载超时时间（毫秒）
+  user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+
+# 登录配置
+login:
+  max_retries: 3      # 登录最大重试次数
+  retry_delay: 5      # 重试间隔（秒）
+  captcha_timeout: 30 # 验证码识别超时时间（秒）
+
+# 学习配置
+learning:
+  check_interval: 30        # 状态检查间隔（秒）
+  human_behavior: true      # 启用人类行为模拟
+  auto_handle_popups: true  # 自动处理弹窗
+  max_learning_time: 28800  # 最大学习时间（8小时）
+
+# 系统配置
+system:
+  log_level: "INFO"                  # 日志级别
+  log_file: "logs/auto_study.log"    # 日志文件路径
+  data_dir: "data"                   # 数据目录
+  max_log_size: 10485760            # 最大日志文件大小（10MB）
+  backup_count: 5                    # 日志文件备份数量
+
+# 网站配置
+site:
+  url: "https://edu.nxgbjy.org.cn"
+  login_url: "https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice"
+  courses_url: "https://edu.nxgbjy.org.cn/nxxzxy/index.html#/study_center/tool_box/required?id=275"
+
+# 反检测配置
+anti_detection:
+  mouse_movement: true     # 随机鼠标移动
+  keyboard_simulation: true # 键盘事件模拟
+  random_delays: true      # 随机延迟
+  viewport_randomization: false # 视口随机化
+
+# 性能配置
+performance:
+  max_concurrent_tabs: 5   # 最大并发标签页数
+  memory_limit: 512        # 内存限制（MB）
+  cache_size: 100          # 缓存大小（MB）

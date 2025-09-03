@@ -1,0 +1,51 @@
+# Auto Study - 本地配置示例
+# 复制此文件为 local.yml 并填入您的个人配置
+# local.yml 文件不会被提交到版本控制系统
+
+# 用户凭据（请填入您的登录信息）
+credentials:
+  username: "${AUTO_STUDY_USERNAME:your_username_here}"
+  password: "${AUTO_STUDY_PASSWORD:your_password_here}"
+
+# 个人偏好设置
+browser:
+  headless: false  # 根据个人喜好调整
+  width: 1920      # 根据您的屏幕分辨率调整
+  height: 1080
+
+# 学习偏好
+learning:
+  check_interval: 30    # 根据网络状况调整
+  max_learning_time: 7200  # 2小时，根据个人需要调整
+
+# 个人目录设置
+system:
+  data_dir: "data"           # 可自定义数据存储目录
+  log_file: "logs/personal.log"  # 个人日志文件
+
+# 网络配置（如果需要代理）
+network:
+  proxy:
+    enabled: false
+    host: "127.0.0.1"
+    port: 8080
+    username: ""
+    password: ""
+
+# 通知配置（可选）
+notifications:
+  enabled: false
+  email:
+    smtp_host: ""
+    smtp_port: 587
+    username: ""
+    password: ""
+    to_email: ""
+  
+# 高级配置（谨慎修改）
+advanced:
+  custom_selectors:
+    enabled: false
+    login_username: 'input[name="username"]'
+    login_password: 'input[name="password"]'
+    login_submit: 'button[type="submit"]'

@@ -1,0 +1,29 @@
+# Auto Study - 开发环境配置
+# 开发环境的特定配置，会覆盖默认配置
+
+# 浏览器配置（开发环境使用可视模式）
+browser:
+  headless: false  # 开发时显示浏览器窗口
+  timeout: 60000   # 开发时增加超时时间
+
+# 系统配置（开发环境详细日志）
+system:
+  log_level: "DEBUG"  # 开发环境使用调试级别日志
+  log_file: "logs/dev.log"
+
+# 学习配置（开发环境缩短间隔）
+learning:
+  check_interval: 10  # 更频繁的检查
+  max_learning_time: 3600  # 开发时限制为1小时
+
+# 反检测配置（开发环境关闭部分功能便于调试）
+anti_detection:
+  mouse_movement: false
+  random_delays: false
+
+# 开发工具配置
+development:
+  debug_screenshots: true    # 启用调试截图
+  verbose_logging: true      # 详细日志
+  mock_captcha: false        # 模拟验证码（测试用）
+  slow_mode: true           # 慢速模式便于观察

@@ -1,0 +1,1602 @@
+2025-09-03 15:25:54,759 - auto_study - ERROR - 数据解密失败: Incorrect padding
+2025-09-03 15:25:54,800 - auto_study - INFO - 已生成新的主密钥
+2025-09-03 15:25:54,858 - auto_study - INFO - 主密钥已轮换
+2025-09-03 15:25:54,896 - auto_study - ERROR - 密钥轮换失败: 写入失败
+2025-09-03 15:25:54,955 - auto_study - INFO - 已生成新的主密钥
+2025-09-03 15:26:42,238 - auto_study - ERROR - 数据解密失败: Incorrect padding
+2025-09-03 15:26:42,280 - auto_study - INFO - 已生成新的主密钥
+2025-09-03 15:26:42,338 - auto_study - INFO - 主密钥已轮换
+2025-09-03 15:26:42,377 - auto_study - ERROR - 密钥轮换失败: 写入失败
+2025-09-03 15:26:48,094 - auto_study - INFO - 成功加载配置文件: /var/folders/c9/gm79dlyj3811cy2s8f2zl3100000gn/T/tmpjyei24ra.yml
+2025-09-03 15:26:48,097 - auto_study - ERROR - YAML解析错误: mapping values are not allowed here
+  in "/var/folders/c9/gm79dlyj3811cy2s8f2zl3100000gn/T/tmplp9fk7ty.yml", line 1, column 14
+2025-09-03 15:26:48,098 - auto_study - INFO - 成功加载配置文件: /var/folders/c9/gm79dlyj3811cy2s8f2zl3100000gn/T/tmpm23303sy.yml
+2025-09-03 15:26:48,099 - auto_study - INFO - 成功加载配置文件: /var/folders/c9/gm79dlyj3811cy2s8f2zl3100000gn/T/tmpcili7fl8.yml
+2025-09-03 15:26:48,100 - auto_study - INFO - 成功加载配置文件: /var/folders/c9/gm79dlyj3811cy2s8f2zl3100000gn/T/tmp_gj29uj_.yml
+2025-09-03 15:26:48,103 - auto_study - INFO - 配置文件已保存: /var/folders/c9/gm79dlyj3811cy2s8f2zl3100000gn/T/tmpat00dc2h.yml
+2025-09-03 15:27:03,002 - auto_study - INFO - 成功加载配置文件: /var/folders/c9/gm79dlyj3811cy2s8f2zl3100000gn/T/tmpz50umi7o.yml
+2025-09-03 15:27:03,004 - auto_study - ERROR - YAML解析错误: mapping values are not allowed here
+  in "/var/folders/c9/gm79dlyj3811cy2s8f2zl3100000gn/T/tmpl5y2mcs6.yml", line 1, column 14
+2025-09-03 15:27:03,005 - auto_study - INFO - 成功加载配置文件: /var/folders/c9/gm79dlyj3811cy2s8f2zl3100000gn/T/tmpjyge3oaw.yml
+2025-09-03 15:27:03,006 - auto_study - INFO - 成功加载配置文件: /var/folders/c9/gm79dlyj3811cy2s8f2zl3100000gn/T/tmptjz60nx_.yml
+2025-09-03 15:27:03,008 - auto_study - INFO - 成功加载配置文件: /var/folders/c9/gm79dlyj3811cy2s8f2zl3100000gn/T/tmpia9kkdfr.yml
+2025-09-03 15:27:03,009 - auto_study - INFO - 配置文件已保存: /var/folders/c9/gm79dlyj3811cy2s8f2zl3100000gn/T/tmpdnka38w5.yml
+2025-09-03 16:50:49,245 - auto_study - ERROR - 验证码识别器初始化失败: DdddOcr.__init__() got an unexpected keyword argument 'show_ad'
+2025-09-03 16:51:03,149 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 16:51:03,150 - auto_study - ERROR - 验证码识别器初始化失败: DdddOcr.__init__() got an unexpected keyword argument 'beta'
+2025-09-03 16:51:12,026 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 16:51:12,043 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 16:51:13,121 - auto_study - INFO - 完成人类模拟打字: #test-input
+2025-09-03 16:51:13,452 - auto_study - INFO - 完成鼠标移动模拟到 (145, 153)
+2025-09-03 16:51:17,026 - auto_study - INFO - 完成滚动行为模拟，共滚动 2 次
+2025-09-03 16:51:17,029 - auto_study - WARNING - 检测到以下风险: ['webdriver属性未隐藏']
+2025-09-03 16:51:17,029 - auto_study - INFO - 鼠标事件历史注入完成
+2025-09-03 16:51:17,030 - auto_study - INFO - 未检测到Cloudflare挑战
+2025-09-03 16:51:51,122 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 16:51:51,139 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 16:51:59,264 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 16:51:59,280 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 16:52:03,942 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 16:52:03,958 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 16:52:04,188 - auto_study - ERROR - 浏览器启动失败: BrowserType.launch() got an unexpected keyword argument 'user_data_dir'
+2025-09-03 16:52:04,193 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 16:52:34,383 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 16:52:34,399 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 16:52:35,676 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 16:52:35,687 - auto_study - INFO - 浏览器上下文创建成功
+2025-09-03 16:52:35,690 - auto_study - INFO - 浏览器上下文反检测设置完成
+2025-09-03 16:52:37,116 - auto_study - INFO - 新页面创建成功，当前页面数: 1
+2025-09-03 16:52:37,121 - auto_study - INFO - 页面反检测设置完成
+2025-09-03 16:52:37,161 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 16:52:43,023 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 16:52:43,039 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 16:52:43,419 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 16:52:43,428 - auto_study - INFO - 浏览器上下文创建成功
+2025-09-03 16:52:43,430 - auto_study - INFO - 浏览器上下文反检测设置完成
+2025-09-03 16:52:43,460 - auto_study - INFO - 新页面创建成功，当前页面数: 1
+2025-09-03 16:52:43,463 - auto_study - INFO - 页面反检测设置完成
+2025-09-03 16:52:43,493 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 16:52:44,360 - auto_study - INFO - 完成人类模拟打字: #test-input
+2025-09-03 16:52:44,767 - auto_study - INFO - 完成鼠标移动模拟到 (469, 129)
+2025-09-03 16:52:47,768 - auto_study - INFO - 完成滚动行为模拟，共滚动 2 次
+2025-09-03 16:52:47,769 - auto_study - WARNING - 检测到以下风险: ['webdriver属性未隐藏']
+2025-09-03 16:52:47,770 - auto_study - INFO - 鼠标事件历史注入完成
+2025-09-03 16:52:47,770 - auto_study - INFO - 未检测到Cloudflare挑战
+2025-09-03 16:53:01,503 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 16:53:01,520 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 16:53:06,333 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 16:53:06,349 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 16:53:06,712 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 16:53:06,717 - auto_study - INFO - 浏览器上下文创建成功
+2025-09-03 16:53:06,722 - auto_study - INFO - 浏览器上下文反检测设置完成
+2025-09-03 16:53:06,755 - auto_study - INFO - 新页面创建成功，当前页面数: 1
+2025-09-03 16:53:06,759 - auto_study - INFO - 页面反检测设置完成
+2025-09-03 16:53:06,789 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 16:53:07,689 - auto_study - INFO - 完成人类模拟打字: #test-input
+2025-09-03 16:53:08,098 - auto_study - INFO - 完成鼠标移动模拟到 (278, 213)
+2025-09-03 16:53:10,940 - auto_study - INFO - 完成滚动行为模拟，共滚动 2 次
+2025-09-03 16:53:10,941 - auto_study - WARNING - 检测到以下风险: ['webdriver属性未隐藏']
+2025-09-03 16:53:10,942 - auto_study - INFO - 鼠标事件历史注入完成
+2025-09-03 16:53:10,942 - auto_study - INFO - 未检测到Cloudflare挑战
+2025-09-03 16:53:15,731 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 16:53:15,747 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 16:53:15,756 - auto_study - ERROR - 贝塞尔曲线鼠标移动失败: 'coroutine' object has no attribute 'bounding_box'
+2025-09-03 16:53:15,799 - auto_study - ERROR - 高斯分布人类打字模拟失败: 'coroutine' object has no attribute 'click'
+2025-09-03 16:53:15,814 - auto_study - INFO - 浏览器上下文反检测设置完成
+2025-09-03 16:53:15,815 - auto_study - INFO - 页面反检测设置完成
+2025-09-03 16:53:16,418 - auto_study - INFO - 完成滚动行为模拟，共滚动 1 次
+2025-09-03 16:53:20,280 - auto_study - INFO - 完成滚动行为模拟，共滚动 3 次
+2025-09-03 16:53:20,280 - auto_study - INFO - 鼠标事件历史注入完成
+2025-09-03 16:53:20,281 - auto_study - INFO - 鼠标事件历史注入完成
+2025-09-03 16:53:20,281 - auto_study - INFO - 完成 5 个用户活动模拟
+2025-09-03 16:53:20,282 - auto_study - WARNING - 检测到以下风险: ['webdriver属性未隐藏', '检测到Selenium特征', '浏览器插件数量异常']
+2025-09-03 16:53:20,283 - auto_study - INFO - 未检测到Cloudflare挑战
+2025-09-03 16:53:20,284 - auto_study - INFO - 检测到Cloudflare挑战，等待自动通过...
+2025-09-03 16:53:20,284 - auto_study - INFO - 成功通过Cloudflare挑战
+2025-09-03 16:53:20,284 - auto_study - INFO - 未检测到Cloudflare挑战
+2025-09-03 16:53:22,393 - auto_study - INFO - 完成滚动行为模拟，共滚动 2 次
+2025-09-03 16:53:24,007 - auto_study - INFO - 完成贝塞尔曲线鼠标移动到 (1079.0, 875.0)，路径点数: 38, 控制点: 2
+2025-09-03 16:53:24,038 - auto_study - INFO - 完成贝塞尔曲线鼠标移动到 (1452.0, 229.0)，路径点数: 34, 控制点: 1
+2025-09-03 16:53:24,186 - auto_study - INFO - 完成贝塞尔曲线鼠标移动到 (1117.0, 848.0)，路径点数: 40, 控制点: 1
+2025-09-03 16:53:24,393 - auto_study - INFO - 完成贝塞尔曲线鼠标移动到 (1757.0, 865.0)，路径点数: 38, 控制点: 3
+2025-09-03 16:53:24,425 - auto_study - INFO - 完成贝塞尔曲线鼠标移动到 (1533.0, 121.0)，路径点数: 50, 控制点: 3
+2025-09-03 20:19:41,697 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:19:41,713 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:29:33,376 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:29:33,392 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:29:33,606 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:29:33,607 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:29:33,607 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:30:09,796 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:30:09,812 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:30:10,025 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:30:10,026 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:30:10,027 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:32:36,840 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:32:36,857 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:32:36,969 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:35:10,221 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:35:10,238 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:35:10,345 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:35:10,346 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:35:10,346 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:36:36,169 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:36:36,185 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:36:36,280 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:36:36,281 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:36:36,282 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:36:36,283 - auto_study - ERROR - 💥 错误: 'BrowserManager' object has no attribute 'close' - 上下文: 资源清理失败
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 172, in cleanup
+    await self.browser_manager.close()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BrowserManager' object has no attribute 'close'
+2025-09-03 20:38:43,037 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:38:43,053 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:38:43,147 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:38:43,148 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:38:43,149 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:38:43,153 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 20:38:43,153 - auto_study - ERROR - 配置验证失败
+2025-09-03 20:38:43,154 - auto_study - ERROR - 系统初始化失败
+2025-09-03 20:38:43,154 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:38:43,154 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:38:43,155 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:38:43,156 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:39:36,351 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:39:36,367 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:39:36,522 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:39:36,523 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:39:36,523 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:39:36,731 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 20:39:36,733 - auto_study - ERROR - 配置验证失败
+2025-09-03 20:39:36,733 - auto_study - ERROR - 系统初始化失败
+2025-09-03 20:39:36,734 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:39:36,734 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:39:36,837 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:39:36,837 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:40:19,535 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:40:19,551 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:40:19,715 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:40:19,716 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:40:19,716 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:40:19,917 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 20:40:19,919 - auto_study - ERROR - 配置验证失败
+2025-09-03 20:40:19,919 - auto_study - ERROR - 系统初始化失败
+2025-09-03 20:40:19,920 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:40:19,920 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:40:20,024 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:40:20,024 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:44:05,207 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:44:05,223 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:44:05,335 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:44:05,336 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:44:05,337 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:44:05,339 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 20:44:05,339 - auto_study - ERROR - 配置验证失败
+2025-09-03 20:44:05,339 - auto_study - ERROR - 系统初始化失败
+2025-09-03 20:44:05,340 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:44:05,340 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:44:05,341 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:44:05,341 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:45:02,258 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:45:02,275 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:45:02,376 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:45:02,377 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:45:02,377 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:45:02,383 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 20:45:02,385 - auto_study - ERROR - 配置验证失败
+2025-09-03 20:45:02,385 - auto_study - ERROR - 系统初始化失败
+2025-09-03 20:45:02,386 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:45:02,386 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:45:02,424 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:45:02,425 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:45:35,325 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:45:35,341 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:45:35,440 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:45:35,441 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:45:35,441 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:45:35,447 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 20:45:35,449 - auto_study - ERROR - 配置验证失败
+2025-09-03 20:45:35,449 - auto_study - ERROR - 系统初始化失败
+2025-09-03 20:45:35,449 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:45:35,450 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:45:35,488 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:45:35,489 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:47:13,689 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:47:13,706 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:47:13,806 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:47:13,807 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:47:13,807 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:47:13,813 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 20:47:13,815 - auto_study - ERROR - 配置验证失败
+2025-09-03 20:47:13,815 - auto_study - ERROR - 系统初始化失败
+2025-09-03 20:47:13,816 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:47:13,816 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:47:13,855 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:47:13,855 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:49:37,972 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:49:37,988 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:49:38,080 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:49:38,081 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:49:38,081 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:49:38,083 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 20:49:38,083 - auto_study - ERROR - 💥 错误: 'BrowserManager' object has no attribute 'start_browser' - 上下文: 系统初始化失败
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 39, in initialize
+    await self.browser_manager.start_browser(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BrowserManager' object has no attribute 'start_browser'
+2025-09-03 20:49:38,084 - auto_study - ERROR - 系统初始化失败
+2025-09-03 20:49:38,084 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:49:38,085 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:49:38,085 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:49:38,085 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:49:44,575 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:49:44,591 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:49:44,692 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:49:44,693 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:49:44,693 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:49:44,699 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 20:49:44,699 - auto_study - ERROR - 💥 错误: 'BrowserManager' object has no attribute 'start_browser' - 上下文: 系统初始化失败
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 39, in initialize
+    await self.browser_manager.start_browser(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BrowserManager' object has no attribute 'start_browser'
+2025-09-03 20:49:44,700 - auto_study - ERROR - 系统初始化失败
+2025-09-03 20:49:44,700 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:49:44,700 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:49:44,740 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:49:44,740 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:52:06,367 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:52:06,383 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:52:06,477 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:52:06,478 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:52:06,479 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:52:06,480 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 20:52:06,481 - auto_study - ERROR - 💥 错误: It looks like you are using Playwright Sync API inside the asyncio loop.
+Please use the Async API instead. - 上下文: 系统初始化失败
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 39, in initialize
+    await self.browser_manager.start_browser(
+        headless=settings.browser.headless
+    )
+  File "/Users/majun/Prog/auto_study/src/auto_study/automation/browser_manager.py", line 399, in start_browser
+    self._playwright = sync_playwright().start()
+                       ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/majun/Prog/auto_study/venv/lib/python3.13/site-packages/playwright/sync_api/_context_manager.py", line 84, in start
+    return self.__enter__()
+           ~~~~~~~~~~~~~~^^
+  File "/Users/majun/Prog/auto_study/venv/lib/python3.13/site-packages/playwright/sync_api/_context_manager.py", line 47, in __enter__
+                raise Error(
+    ...<2 lines>...
+                )
+playwright._impl._errors.Error: It looks like you are using Playwright Sync API inside the asyncio loop.
+Please use the Async API instead.
+2025-09-03 20:52:06,483 - auto_study - ERROR - 系统初始化失败
+2025-09-03 20:52:06,483 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:52:06,483 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:52:06,484 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:52:06,484 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:54:43,671 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:54:43,688 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:54:43,799 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:54:43,800 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:54:43,801 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:54:43,803 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 20:54:45,837 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 20:54:46,516 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 20:54:46,535 - auto_study - ERROR - 💥 错误: 'Page' object has no attribute 'get_config' - 上下文: 系统初始化失败
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 47, in initialize
+    self.course_manager = CourseManager(page)
+                          ~~~~~~~~~~~~~^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/automation/course_manager.py", line 209, in __init__
+    self.config = self.config_manager.get_config()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Page' object has no attribute 'get_config'
+2025-09-03 20:54:46,537 - auto_study - ERROR - 系统初始化失败
+2025-09-03 20:54:46,737 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 20:54:46,737 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:54:46,737 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:54:46,738 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 20:54:46,739 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:54:46,739 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:55:51,880 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:55:51,896 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:55:51,991 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:55:51,992 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:55:51,993 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:55:51,995 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 20:55:52,376 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 20:55:52,504 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 20:55:52,521 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:55:52,522 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:55:52,522 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:55:52,523 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 20:55:52,523 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 20:55:52,523 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 20:56:59,904 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:56:59,921 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:57:48,140 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:57:48,141 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:57:48,142 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:57:48,149 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 20:57:48,603 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 20:57:48,803 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 20:57:48,823 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:57:48,824 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:57:48,825 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:57:48,825 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 20:57:48,825 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 20:57:48,825 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 20:57:59,365 - auto_study - ERROR - ❌ 登录失败: 640302198607120020 - 登录验证失败
+2025-09-03 20:57:59,366 - auto_study - WARNING - 第1次尝试失败: 登录验证失败, 2.0秒后重试...
+2025-09-03 20:58:01,367 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 20:58:01,373 - auto_study - ERROR - ❌ 登录失败: 640302198607120020 - 登录验证失败
+2025-09-03 20:58:01,373 - auto_study - WARNING - 第2次尝试失败: 登录验证失败, 2.0秒后重试...
+2025-09-03 20:58:03,375 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 20:58:03,386 - auto_study - ERROR - ❌ 登录失败: 640302198607120020 - 登录验证失败
+2025-09-03 20:58:03,387 - auto_study - ERROR - 所有重试失败: 登录验证失败
+2025-09-03 20:58:03,388 - auto_study - ERROR - 💥 错误: 登录验证失败 - 上下文: 应用运行异常
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 196, in run
+    if not await self.login():
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/utils/error_handler.py", line 64, in async_wrapper
+    raise last_exception
+  File "/Users/majun/Prog/auto_study/src/auto_study/utils/error_handler.py", line 52, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 72, in login
+    raise LoginError("登录验证失败")
+src.auto_study.utils.error_handler.LoginError: 登录验证失败
+2025-09-03 20:58:03,486 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 20:58:03,486 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:58:03,487 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:58:03,544 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 20:58:03,544 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:58:03,544 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:59:16,634 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 20:59:16,650 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 20:59:16,790 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:59:16,791 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:59:16,791 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:59:16,797 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 20:59:17,162 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 20:59:17,342 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 20:59:17,361 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 20:59:17,362 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 20:59:17,362 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 20:59:17,362 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 20:59:17,363 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 20:59:17,363 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 20:59:38,086 - auto_study - ERROR - ❌ 登录失败: 640302198607120020 - 登录验证失败
+2025-09-03 20:59:38,086 - auto_study - WARNING - 第1次尝试失败: 登录验证失败, 2.0秒后重试...
+2025-09-03 20:59:40,088 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 20:59:40,100 - auto_study - ERROR - ❌ 登录失败: 640302198607120020 - 登录验证失败
+2025-09-03 20:59:40,101 - auto_study - WARNING - 第2次尝试失败: 登录验证失败, 2.0秒后重试...
+2025-09-03 20:59:42,103 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 20:59:42,113 - auto_study - ERROR - ❌ 登录失败: 640302198607120020 - 登录验证失败
+2025-09-03 20:59:42,113 - auto_study - ERROR - 所有重试失败: 登录验证失败
+2025-09-03 20:59:42,114 - auto_study - ERROR - 💥 错误: 登录验证失败 - 上下文: 应用运行异常
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 196, in run
+    if not await self.login():
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/utils/error_handler.py", line 64, in async_wrapper
+    raise last_exception
+  File "/Users/majun/Prog/auto_study/src/auto_study/utils/error_handler.py", line 52, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 72, in login
+    raise LoginError("登录验证失败")
+src.auto_study.utils.error_handler.LoginError: 登录验证失败
+2025-09-03 20:59:42,119 - auto_study - ERROR - 异步资源清理失败: Browser.close: Connection closed while reading from the driver
+2025-09-03 20:59:42,119 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:59:42,120 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 20:59:42,192 - auto_study - ERROR - 异步资源清理失败: Browser.close: Connection closed while reading from the driver
+2025-09-03 20:59:42,192 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 20:59:42,193 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 21:00:47,697 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 21:00:47,713 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 21:00:47,815 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:00:47,816 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:00:47,816 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:00:47,822 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 21:00:48,237 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 21:00:48,415 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 21:00:48,435 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:00:48,436 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:00:48,436 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:00:48,436 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 21:00:48,436 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 21:00:48,437 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:00:52,384 - auto_study - ERROR - ❌ 登录失败: 640302198607120020 - 登录验证失败
+2025-09-03 21:00:52,385 - auto_study - WARNING - 第1次尝试失败: 登录验证失败, 2.0秒后重试...
+2025-09-03 21:00:54,387 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:00:54,391 - auto_study - ERROR - ❌ 登录失败: 640302198607120020 - 登录验证失败
+2025-09-03 21:00:54,391 - auto_study - WARNING - 第2次尝试失败: 登录验证失败, 2.0秒后重试...
+2025-09-03 21:00:56,393 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:00:56,404 - auto_study - ERROR - ❌ 登录失败: 640302198607120020 - 登录验证失败
+2025-09-03 21:00:56,404 - auto_study - ERROR - 所有重试失败: 登录验证失败
+2025-09-03 21:00:56,405 - auto_study - ERROR - 💥 错误: 登录验证失败 - 上下文: 应用运行异常
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 196, in run
+    if not await self.login():
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/utils/error_handler.py", line 64, in async_wrapper
+    raise last_exception
+  File "/Users/majun/Prog/auto_study/src/auto_study/utils/error_handler.py", line 52, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 72, in login
+    raise LoginError("登录验证失败")
+src.auto_study.utils.error_handler.LoginError: 登录验证失败
+2025-09-03 21:00:56,505 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 21:00:56,505 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 21:00:56,506 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 21:00:56,558 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 21:00:56,559 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 21:00:56,559 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 21:03:30,382 - auto_study - INFO - 浏览器启动成功
+2025-09-03 21:03:30,384 - auto_study - INFO - 开始分析网站: https://edu.nxgbjy.org.cn
+2025-09-03 21:03:30,384 - auto_study - INFO - 访问页面: https://edu.nxgbjy.org.cn
+2025-09-03 21:03:38,349 - auto_study - INFO - 找到 28 个链接
+2025-09-03 21:03:38,350 - auto_study - INFO - 🔐 发现登录链接: 更多 + -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 21:03:38,350 - auto_study - INFO - 🔐 发现登录链接: 更多 + -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/special_recommendation
+2025-09-03 21:03:38,351 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/topic_details?category_id=173&category_name=%E5%85%A8%E5%8C%BA%E9%A2%86%E5%AF%BC%E5%B9%B2%E9%83%A8%E5%A4%A7%E8%AE%B2%E5%A0%82
+2025-09-03 21:03:38,352 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/topic_details?category_id=172&category_name=%E9%93%B8%E7%89%A2%E4%B8%AD%E5%8D%8E%E6%B0%91%E6%97%8F%E5%85%B1%E5%90%8C%E4%BD%93%E6%84%8F%E8%AF%86
+2025-09-03 21:03:38,352 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/topic_details?category_id=171&category_name=%E5%AD%A6%E4%B9%A0%E8%B4%AF%E5%BD%BB%E5%85%9A%E7%9A%84%E4%BA%8C%E5%8D%81%E5%B1%8A%E4%B8%89%E4%B8%AD%E5%85%A8%E4%BC%9A%E7%B2%BE%E7%A5%9E%E2%80%94%E2%80%94%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%85%A8%E9%9D%A2%E6%B7%B1%E5%8C%96%E6%94%B9%E9%9D%A9%E3%80%81%E6%8E%A8%E8%BF%9B%E4%B8%AD%E5%9B%BD%E5%BC%8F%E7%8E%B0%E4%BB%A3%E5%8C%96
+2025-09-03 21:03:38,353 - auto_study - INFO - 🔐 发现登录链接: 更多 + -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/online_special_class
+2025-09-03 21:03:38,354 - auto_study - INFO - 📚 发现课程链接: 更多 + -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/online_special_class
+2025-09-03 21:03:38,354 - auto_study - INFO - 🔐 发现登录链接: 2025年事业单位领导人网络培训班 -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/online_seminar_details?class_id=277&course_type=0
+2025-09-03 21:03:38,355 - auto_study - INFO - 📚 发现课程链接: 2025年事业单位领导人网络培训班 -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/online_seminar_details?class_id=277&course_type=0
+2025-09-03 21:03:38,356 - auto_study - INFO - 🔐 发现登录链接: 2025年企业领导人网络培训班 -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/online_seminar_details?class_id=276&course_type=0
+2025-09-03 21:03:38,356 - auto_study - INFO - 📚 发现课程链接: 2025年企业领导人网络培训班 -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/online_seminar_details?class_id=276&course_type=0
+2025-09-03 21:03:38,357 - auto_study - INFO - 🔐 发现登录链接: 2025年公务员网络培训班 -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/online_seminar_details?class_id=275&course_type=0
+2025-09-03 21:03:38,357 - auto_study - INFO - 📚 发现课程链接: 2025年公务员网络培训班 -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/online_seminar_details?class_id=275&course_type=0
+2025-09-03 21:03:38,358 - auto_study - INFO - 🔐 发现登录链接: 更多 + -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_recommendation?index=0
+2025-09-03 21:03:38,358 - auto_study - INFO - 📚 发现课程链接: 更多 + -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_recommendation?index=0
+2025-09-03 21:03:38,359 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11375&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:03:38,359 - auto_study - INFO - 📚 发现课程链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11375&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:03:38,360 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11374&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:03:38,360 - auto_study - INFO - 📚 发现课程链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11374&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:03:38,361 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11373&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:03:38,361 - auto_study - INFO - 📚 发现课程链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11373&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:03:38,362 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11372&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:03:38,362 - auto_study - INFO - 📚 发现课程链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11372&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:03:38,363 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11371&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:03:38,363 - auto_study - INFO - 📚 发现课程链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11371&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:03:38,364 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11370&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:03:38,364 - auto_study - INFO - 📚 发现课程链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11370&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:03:38,365 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11369&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:03:38,365 - auto_study - INFO - 📚 发现课程链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11369&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:03:38,365 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11368&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:03:38,366 - auto_study - INFO - 📚 发现课程链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11368&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:03:38,597 - auto_study - INFO - ✅ 找到登录页面: https://edu.nxgbjy.org.cn/login
+2025-09-03 21:03:38,830 - auto_study - INFO - ✅ 找到登录页面: https://edu.nxgbjy.org.cn/login.html
+2025-09-03 21:03:39,314 - auto_study - INFO - ✅ 找到登录页面: https://edu.nxgbjy.org.cn/user/login
+2025-09-03 21:03:39,566 - auto_study - INFO - ✅ 找到登录页面: https://edu.nxgbjy.org.cn/auth/login
+2025-09-03 21:03:40,764 - auto_study - INFO - 🔄 https://edu.nxgbjy.org.cn/nxxzxy/index.html 重定向到: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/
+2025-09-03 21:03:41,260 - auto_study - INFO - ✅ 找到登录页面: https://edu.nxgbjy.org.cn/student/login
+2025-09-03 21:03:41,614 - auto_study - INFO - ✅ 找到登录页面: https://edu.nxgbjy.org.cn/member/login
+2025-09-03 21:03:41,616 - auto_study - ERROR - 脚本执行失败: EOF when reading a line
+2025-09-03 21:03:41,733 - auto_study - INFO - 浏览器关闭完成
+2025-09-03 21:04:57,218 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:04:57,219 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:04:57,220 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:05:04,697 - auto_study - ERROR - URL验证失败: EOF when reading a line
+2025-09-03 21:06:40,334 - auto_study - INFO - 浏览器启动成功
+2025-09-03 21:06:40,336 - auto_study - INFO - 开始分析网站: https://edu.nxgbjy.org.cn
+2025-09-03 21:06:40,336 - auto_study - INFO - 访问页面: https://edu.nxgbjy.org.cn
+2025-09-03 21:06:48,673 - auto_study - INFO - 找到 28 个链接
+2025-09-03 21:06:48,674 - auto_study - INFO - 🔐 发现登录链接: 更多 + -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 21:06:48,674 - auto_study - INFO - 🔐 发现登录链接: 更多 + -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/special_recommendation
+2025-09-03 21:06:48,675 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/topic_details?category_id=173&category_name=%E5%85%A8%E5%8C%BA%E9%A2%86%E5%AF%BC%E5%B9%B2%E9%83%A8%E5%A4%A7%E8%AE%B2%E5%A0%82
+2025-09-03 21:06:48,676 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/topic_details?category_id=172&category_name=%E9%93%B8%E7%89%A2%E4%B8%AD%E5%8D%8E%E6%B0%91%E6%97%8F%E5%85%B1%E5%90%8C%E4%BD%93%E6%84%8F%E8%AF%86
+2025-09-03 21:06:48,676 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/topic_details?category_id=171&category_name=%E5%AD%A6%E4%B9%A0%E8%B4%AF%E5%BD%BB%E5%85%9A%E7%9A%84%E4%BA%8C%E5%8D%81%E5%B1%8A%E4%B8%89%E4%B8%AD%E5%85%A8%E4%BC%9A%E7%B2%BE%E7%A5%9E%E2%80%94%E2%80%94%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%85%A8%E9%9D%A2%E6%B7%B1%E5%8C%96%E6%94%B9%E9%9D%A9%E3%80%81%E6%8E%A8%E8%BF%9B%E4%B8%AD%E5%9B%BD%E5%BC%8F%E7%8E%B0%E4%BB%A3%E5%8C%96
+2025-09-03 21:06:48,677 - auto_study - INFO - 🔐 发现登录链接: 更多 + -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/online_special_class
+2025-09-03 21:06:48,678 - auto_study - INFO - 📚 发现课程链接: 更多 + -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/online_special_class
+2025-09-03 21:06:48,678 - auto_study - INFO - 🔐 发现登录链接: 2025年事业单位领导人网络培训班 -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/online_seminar_details?class_id=277&course_type=0
+2025-09-03 21:06:48,679 - auto_study - INFO - 📚 发现课程链接: 2025年事业单位领导人网络培训班 -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/online_seminar_details?class_id=277&course_type=0
+2025-09-03 21:06:48,679 - auto_study - INFO - 🔐 发现登录链接: 2025年企业领导人网络培训班 -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/online_seminar_details?class_id=276&course_type=0
+2025-09-03 21:06:48,680 - auto_study - INFO - 📚 发现课程链接: 2025年企业领导人网络培训班 -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/online_seminar_details?class_id=276&course_type=0
+2025-09-03 21:06:48,681 - auto_study - INFO - 🔐 发现登录链接: 2025年公务员网络培训班 -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/online_seminar_details?class_id=275&course_type=0
+2025-09-03 21:06:48,681 - auto_study - INFO - 📚 发现课程链接: 2025年公务员网络培训班 -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/online_seminar_details?class_id=275&course_type=0
+2025-09-03 21:06:48,682 - auto_study - INFO - 🔐 发现登录链接: 更多 + -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_recommendation?index=0
+2025-09-03 21:06:48,682 - auto_study - INFO - 📚 发现课程链接: 更多 + -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_recommendation?index=0
+2025-09-03 21:06:48,682 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11375&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:06:48,683 - auto_study - INFO - 📚 发现课程链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11375&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:06:48,683 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11374&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:06:48,684 - auto_study - INFO - 📚 发现课程链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11374&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:06:48,684 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11373&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:06:48,685 - auto_study - INFO - 📚 发现课程链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11373&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:06:48,685 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11372&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:06:48,686 - auto_study - INFO - 📚 发现课程链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11372&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:06:48,686 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11371&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:06:48,687 - auto_study - INFO - 📚 发现课程链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11371&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:06:48,687 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11370&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:06:48,688 - auto_study - INFO - 📚 发现课程链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11370&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:06:48,688 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11369&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:06:48,689 - auto_study - INFO - 📚 发现课程链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11369&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:06:48,689 - auto_study - INFO - 🔐 发现登录链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11368&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:06:48,690 - auto_study - INFO - 📚 发现课程链接: 加载中... -> https://edu.nxgbjy.org.cn/nxxzxy/index.html#/course_detail?id=11368&name=%E8%AF%BE%E7%A8%8B%E6%8E%A8%E8%8D%90
+2025-09-03 21:06:48,926 - auto_study - INFO - ✅ 找到登录页面: https://edu.nxgbjy.org.cn/login
+2025-09-03 21:06:49,164 - auto_study - INFO - ✅ 找到登录页面: https://edu.nxgbjy.org.cn/login.html
+2025-09-03 21:06:49,396 - auto_study - INFO - ✅ 找到登录页面: https://edu.nxgbjy.org.cn/user/login
+2025-09-03 21:06:49,646 - auto_study - INFO - ✅ 找到登录页面: https://edu.nxgbjy.org.cn/auth/login
+2025-09-03 21:06:51,230 - auto_study - INFO - 🔄 https://edu.nxgbjy.org.cn/nxxzxy/index.html 重定向到: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/
+2025-09-03 21:06:51,472 - auto_study - INFO - ✅ 找到登录页面: https://edu.nxgbjy.org.cn/student/login
+2025-09-03 21:06:51,702 - auto_study - INFO - ✅ 找到登录页面: https://edu.nxgbjy.org.cn/member/login
+2025-09-03 21:09:16,938 - auto_study - INFO - 浏览器关闭完成
+2025-09-03 21:10:03,117 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 21:10:03,134 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 21:10:03,264 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:10:03,264 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:10:03,265 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:10:03,271 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 21:10:03,689 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 21:10:03,810 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 21:10:03,828 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:10:03,829 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:10:03,829 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:10:03,829 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 21:10:03,830 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 21:10:03,830 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:10:09,413 - auto_study - ERROR - ❌ 登录失败: 640302198607120020 - 登录验证失败
+2025-09-03 21:10:09,414 - auto_study - WARNING - 第1次尝试失败: 登录验证失败, 2.0秒后重试...
+2025-09-03 21:10:11,415 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:10:11,420 - auto_study - ERROR - ❌ 登录失败: 640302198607120020 - 登录验证失败
+2025-09-03 21:10:11,420 - auto_study - WARNING - 第2次尝试失败: 登录验证失败, 2.0秒后重试...
+2025-09-03 21:10:13,422 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:10:13,439 - auto_study - ERROR - ❌ 登录失败: 640302198607120020 - 登录验证失败
+2025-09-03 21:10:13,440 - auto_study - ERROR - 所有重试失败: 登录验证失败
+2025-09-03 21:10:13,440 - auto_study - ERROR - 💥 错误: 登录验证失败 - 上下文: 应用运行异常
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 196, in run
+    if not await self.login():
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/utils/error_handler.py", line 64, in async_wrapper
+    raise last_exception
+  File "/Users/majun/Prog/auto_study/src/auto_study/utils/error_handler.py", line 52, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 72, in login
+    raise LoginError("登录验证失败")
+src.auto_study.utils.error_handler.LoginError: 登录验证失败
+2025-09-03 21:10:13,540 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 21:10:13,540 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 21:10:13,540 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 21:10:13,593 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 21:10:13,593 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 21:10:13,593 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 21:11:33,694 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:11:33,696 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:11:33,696 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:11:40,256 - auto_study - ERROR - URL验证失败: EOF when reading a line
+2025-09-03 21:14:14,847 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:14:14,849 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:14:14,849 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:14:23,697 - auto_study - ERROR - 登录页面调试失败: EOF when reading a line
+2025-09-03 21:15:57,209 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 21:15:57,226 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 21:15:57,340 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:15:57,341 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:15:57,341 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:15:57,343 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 21:15:57,721 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 21:15:57,854 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 21:15:57,872 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:15:57,873 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:15:57,873 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:15:57,874 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:15:57,875 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:15:57,875 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:15:57,876 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 21:15:57,876 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 21:15:57,876 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:15:57,876 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:15:57,877 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 21:16:05,885 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:16:05,902 - auto_study - INFO - 登录表单已加载
+2025-09-03 21:16:05,903 - auto_study - INFO - 填写用户名
+2025-09-03 21:16:06,914 - auto_study - INFO - 填写密码
+2025-09-03 21:16:07,937 - auto_study - INFO - 检查验证码
+2025-09-03 21:16:07,943 - auto_study - INFO - 找到验证码图片
+2025-09-03 21:16:07,944 - auto_study - INFO - 截取验证码图片
+2025-09-03 21:16:08,116 - auto_study - INFO - 识别验证码
+2025-09-03 21:16:08,727 - auto_study - ERROR - 验证码处理失败: module 'PIL.Image' has no attribute 'ANTIALIAS'
+2025-09-03 21:16:08,728 - auto_study - ERROR - 验证码处理失败
+2025-09-03 21:16:08,729 - auto_study - ERROR - ❌ 登录失败: 640302198607120020 - 登录验证失败
+2025-09-03 21:16:08,729 - auto_study - WARNING - 第1次尝试失败: 登录验证失败, 2.0秒后重试...
+2025-09-03 21:16:10,731 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:16:10,732 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:16:10,732 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 21:16:13,753 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:16:13,757 - auto_study - INFO - 登录表单已加载
+2025-09-03 21:16:13,757 - auto_study - INFO - 填写用户名
+2025-09-03 21:16:14,770 - auto_study - INFO - 填写密码
+2025-09-03 21:16:15,780 - auto_study - INFO - 检查验证码
+2025-09-03 21:16:15,786 - auto_study - INFO - 找到验证码图片
+2025-09-03 21:16:15,786 - auto_study - INFO - 截取验证码图片
+2025-09-03 21:16:15,829 - auto_study - INFO - 识别验证码
+2025-09-03 21:16:15,830 - auto_study - ERROR - 验证码处理失败: module 'PIL.Image' has no attribute 'ANTIALIAS'
+2025-09-03 21:16:15,830 - auto_study - ERROR - 验证码处理失败
+2025-09-03 21:16:15,830 - auto_study - ERROR - ❌ 登录失败: 640302198607120020 - 登录验证失败
+2025-09-03 21:16:15,831 - auto_study - WARNING - 第2次尝试失败: 登录验证失败, 2.0秒后重试...
+2025-09-03 21:16:17,832 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:16:17,835 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:16:17,836 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 21:16:20,864 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:16:20,867 - auto_study - INFO - 登录表单已加载
+2025-09-03 21:16:20,867 - auto_study - INFO - 填写用户名
+2025-09-03 21:16:21,876 - auto_study - INFO - 填写密码
+2025-09-03 21:16:22,885 - auto_study - INFO - 检查验证码
+2025-09-03 21:16:22,888 - auto_study - INFO - 找到验证码图片
+2025-09-03 21:16:22,888 - auto_study - INFO - 截取验证码图片
+2025-09-03 21:16:22,929 - auto_study - INFO - 识别验证码
+2025-09-03 21:16:22,930 - auto_study - ERROR - 验证码处理失败: module 'PIL.Image' has no attribute 'ANTIALIAS'
+2025-09-03 21:16:22,930 - auto_study - ERROR - 验证码处理失败
+2025-09-03 21:16:22,930 - auto_study - ERROR - ❌ 登录失败: 640302198607120020 - 登录验证失败
+2025-09-03 21:16:22,930 - auto_study - ERROR - 所有重试失败: 登录验证失败
+2025-09-03 21:16:22,930 - auto_study - ERROR - 💥 错误: 登录验证失败 - 上下文: 应用运行异常
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 196, in run
+    if not await self.login():
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/utils/error_handler.py", line 64, in async_wrapper
+    raise last_exception
+  File "/Users/majun/Prog/auto_study/src/auto_study/utils/error_handler.py", line 52, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 72, in login
+    raise LoginError("登录验证失败")
+src.auto_study.utils.error_handler.LoginError: 登录验证失败
+2025-09-03 21:16:23,040 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 21:16:23,041 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 21:16:23,041 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 21:16:23,042 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 21:16:23,043 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 21:16:23,043 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 21:17:29,020 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 21:17:29,037 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 21:17:29,144 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:17:29,145 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:17:29,145 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:17:29,147 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 21:17:29,549 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 21:17:29,738 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 21:17:29,758 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:17:29,759 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:17:29,759 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:17:29,760 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:17:29,761 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:17:29,761 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:17:29,762 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 21:17:29,762 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 21:17:29,762 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:17:29,762 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:17:29,763 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 21:17:37,853 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:17:37,878 - auto_study - INFO - 登录表单已加载
+2025-09-03 21:17:37,878 - auto_study - INFO - 填写用户名
+2025-09-03 21:17:38,891 - auto_study - INFO - 填写密码
+2025-09-03 21:17:39,902 - auto_study - INFO - 检查验证码
+2025-09-03 21:17:39,905 - auto_study - INFO - 找到验证码图片
+2025-09-03 21:17:39,905 - auto_study - INFO - 截取验证码图片
+2025-09-03 21:17:39,949 - auto_study - INFO - 识别验证码
+2025-09-03 21:17:40,259 - auto_study - ERROR - 验证码处理失败: module 'PIL.Image' has no attribute 'ANTIALIAS'
+2025-09-03 21:17:40,260 - auto_study - ERROR - 验证码处理失败
+2025-09-03 21:17:40,261 - auto_study - ERROR - ❌ 登录失败: 640302198607120020 - 登录验证失败
+2025-09-03 21:17:40,261 - auto_study - WARNING - 第1次尝试失败: 登录验证失败, 2.0秒后重试...
+2025-09-03 21:17:42,263 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:17:42,263 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:17:42,264 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 21:17:45,280 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:17:45,286 - auto_study - INFO - 登录表单已加载
+2025-09-03 21:17:45,287 - auto_study - INFO - 填写用户名
+2025-09-03 21:17:46,300 - auto_study - INFO - 填写密码
+2025-09-03 21:17:47,310 - auto_study - INFO - 检查验证码
+2025-09-03 21:17:47,314 - auto_study - INFO - 找到验证码图片
+2025-09-03 21:17:47,314 - auto_study - INFO - 截取验证码图片
+2025-09-03 21:17:47,356 - auto_study - INFO - 识别验证码
+2025-09-03 21:17:47,357 - auto_study - ERROR - 验证码处理失败: module 'PIL.Image' has no attribute 'ANTIALIAS'
+2025-09-03 21:17:47,357 - auto_study - ERROR - 验证码处理失败
+2025-09-03 21:17:47,357 - auto_study - ERROR - ❌ 登录失败: 640302198607120020 - 登录验证失败
+2025-09-03 21:17:47,357 - auto_study - WARNING - 第2次尝试失败: 登录验证失败, 2.0秒后重试...
+2025-09-03 21:17:49,359 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:17:49,359 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:17:49,359 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 21:17:52,375 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:17:52,381 - auto_study - INFO - 登录表单已加载
+2025-09-03 21:17:52,382 - auto_study - INFO - 填写用户名
+2025-09-03 21:17:53,394 - auto_study - INFO - 填写密码
+2025-09-03 21:17:54,412 - auto_study - INFO - 检查验证码
+2025-09-03 21:17:54,418 - auto_study - INFO - 找到验证码图片
+2025-09-03 21:17:54,419 - auto_study - INFO - 截取验证码图片
+2025-09-03 21:17:54,461 - auto_study - INFO - 识别验证码
+2025-09-03 21:17:54,462 - auto_study - ERROR - 验证码处理失败: module 'PIL.Image' has no attribute 'ANTIALIAS'
+2025-09-03 21:17:54,462 - auto_study - ERROR - 验证码处理失败
+2025-09-03 21:17:54,462 - auto_study - ERROR - ❌ 登录失败: 640302198607120020 - 登录验证失败
+2025-09-03 21:17:54,463 - auto_study - ERROR - 所有重试失败: 登录验证失败
+2025-09-03 21:17:54,463 - auto_study - ERROR - 💥 错误: 登录验证失败 - 上下文: 应用运行异常
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 196, in run
+    if not await self.login():
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/utils/error_handler.py", line 64, in async_wrapper
+    raise last_exception
+  File "/Users/majun/Prog/auto_study/src/auto_study/utils/error_handler.py", line 52, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 72, in login
+    raise LoginError("登录验证失败")
+src.auto_study.utils.error_handler.LoginError: 登录验证失败
+2025-09-03 21:17:54,571 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 21:17:54,572 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 21:17:54,572 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 21:17:54,573 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 21:17:54,574 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 21:17:54,574 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 21:24:37,063 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 21:24:37,080 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 21:25:08,327 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 21:25:08,343 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 21:25:08,997 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:25:08,998 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:25:08,998 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:25:08,998 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:25:08,999 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 21:25:16,841 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:25:16,864 - auto_study - INFO - 登录表单已加载
+2025-09-03 21:25:16,864 - auto_study - INFO - 填写用户名
+2025-09-03 21:25:17,876 - auto_study - INFO - 填写密码
+2025-09-03 21:25:18,898 - auto_study - INFO - 检查验证码
+2025-09-03 21:25:18,904 - auto_study - INFO - 找到验证码图片
+2025-09-03 21:25:18,905 - auto_study - INFO - 截取验证码图片
+2025-09-03 21:25:18,945 - auto_study - INFO - 识别验证码
+2025-09-03 21:25:18,958 - auto_study - INFO - 识别结果: 1394
+2025-09-03 21:25:19,967 - auto_study - INFO - 验证码填写完成
+2025-09-03 21:25:19,968 - auto_study - INFO - 点击登录按钮
+2025-09-03 21:25:22,997 - auto_study - INFO - 检查登录状态
+2025-09-03 21:25:25,999 - auto_study - INFO - 当前URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:25:26,008 - auto_study - INFO - 找到登录成功标识: [class*="user"]
+2025-09-03 21:25:26,009 - auto_study - INFO - 登录成功!
+2025-09-03 21:27:19,574 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 21:27:19,590 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 21:27:19,708 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:27:19,709 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:27:19,710 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:27:19,715 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 21:27:20,137 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 21:27:20,274 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 21:27:20,292 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:27:20,292 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:27:20,293 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:27:20,294 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:27:20,295 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:27:20,295 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:27:20,295 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 21:27:20,296 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 21:27:20,296 - auto_study - INFO - 开始登录用户: majun
+2025-09-03 21:27:20,296 - auto_study - INFO - 开始登录用户: majun
+2025-09-03 21:27:20,296 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 21:27:28,430 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:27:28,445 - auto_study - INFO - 登录表单已加载
+2025-09-03 21:27:28,445 - auto_study - INFO - 填写用户名
+2025-09-03 21:27:29,455 - auto_study - INFO - 填写密码
+2025-09-03 21:27:30,466 - auto_study - INFO - 检查验证码
+2025-09-03 21:27:30,473 - auto_study - INFO - 找到验证码图片
+2025-09-03 21:27:30,474 - auto_study - INFO - 截取验证码图片
+2025-09-03 21:27:30,527 - auto_study - INFO - 识别验证码
+2025-09-03 21:27:30,543 - auto_study - INFO - 识别结果: 0321
+2025-09-03 21:27:31,550 - auto_study - INFO - 验证码填写完成
+2025-09-03 21:27:31,552 - auto_study - INFO - 点击登录按钮
+2025-09-03 21:27:34,585 - auto_study - INFO - 检查登录状态
+2025-09-03 21:27:37,588 - auto_study - INFO - 当前URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:27:37,603 - auto_study - INFO - 找到登录成功标识: [class*="user"]
+2025-09-03 21:27:37,603 - auto_study - INFO - 登录成功!
+2025-09-03 21:27:37,604 - auto_study - INFO - 🔐 登录成功: majun
+2025-09-03 21:27:37,604 - auto_study - INFO - 获取课程列表...
+2025-09-03 21:27:37,605 - auto_study - ERROR - 💥 错误: 'CourseManager' object has no attribute 'load_courses' - 上下文: 获取课程列表失败
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 84, in get_courses
+    await self.course_manager.load_courses()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CourseManager' object has no attribute 'load_courses'. Did you mean: 'get_courses'?
+2025-09-03 21:27:37,607 - auto_study - ERROR - 💥 错误: 'CourseManager' object has no attribute 'load_courses' - 上下文: 自动学习过程出错
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 112, in start_learning
+    courses = await self.get_courses()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 84, in get_courses
+    await self.course_manager.load_courses()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CourseManager' object has no attribute 'load_courses'. Did you mean: 'get_courses'?
+2025-09-03 21:27:37,736 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 21:27:37,736 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 21:27:37,736 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 21:27:37,792 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 21:27:37,793 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 21:27:37,793 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 21:27:45,401 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 21:27:45,416 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 21:27:45,535 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:27:45,535 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:27:45,536 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:27:45,541 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 21:27:45,949 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 21:27:46,153 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 21:27:46,172 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:27:46,173 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:27:46,174 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:27:46,175 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:27:46,176 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:27:46,176 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:27:46,176 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 21:27:46,177 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 21:27:46,177 - auto_study - INFO - 开始登录用户: majun
+2025-09-03 21:27:46,177 - auto_study - INFO - 开始登录用户: majun
+2025-09-03 21:27:46,177 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 21:27:54,694 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:27:54,721 - auto_study - INFO - 登录表单已加载
+2025-09-03 21:27:54,722 - auto_study - INFO - 填写用户名
+2025-09-03 21:27:55,735 - auto_study - INFO - 填写密码
+2025-09-03 21:27:56,755 - auto_study - INFO - 检查验证码
+2025-09-03 21:27:56,761 - auto_study - INFO - 找到验证码图片
+2025-09-03 21:27:56,762 - auto_study - INFO - 截取验证码图片
+2025-09-03 21:27:56,805 - auto_study - INFO - 识别验证码
+2025-09-03 21:27:56,820 - auto_study - INFO - 识别结果: 9365
+2025-09-03 21:27:57,830 - auto_study - INFO - 验证码填写完成
+2025-09-03 21:27:57,830 - auto_study - INFO - 点击登录按钮
+2025-09-03 21:28:00,860 - auto_study - INFO - 检查登录状态
+2025-09-03 21:28:03,862 - auto_study - INFO - 当前URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:28:03,871 - auto_study - INFO - 找到登录成功标识: [class*="user"]
+2025-09-03 21:28:03,872 - auto_study - INFO - 登录成功!
+2025-09-03 21:28:03,872 - auto_study - INFO - 🔐 登录成功: majun
+2025-09-03 21:28:03,873 - auto_study - INFO - 获取课程列表...
+2025-09-03 21:28:03,873 - auto_study - ERROR - 💥 错误: 'CourseManager' object has no attribute 'load_courses' - 上下文: 获取课程列表失败
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 84, in get_courses
+    await self.course_manager.load_courses()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CourseManager' object has no attribute 'load_courses'. Did you mean: 'get_courses'?
+2025-09-03 21:28:03,875 - auto_study - ERROR - 💥 错误: 'CourseManager' object has no attribute 'load_courses' - 上下文: 自动学习过程出错
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 112, in start_learning
+    courses = await self.get_courses()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 84, in get_courses
+    await self.course_manager.load_courses()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CourseManager' object has no attribute 'load_courses'. Did you mean: 'get_courses'?
+2025-09-03 21:28:03,982 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 21:28:03,983 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 21:28:03,983 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 21:28:04,036 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 21:28:04,037 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 21:28:04,037 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 21:43:40,013 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 21:43:40,029 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 21:43:40,060 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:43:40,061 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:43:40,061 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:43:40,061 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 21:43:40,474 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 21:43:40,671 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 21:43:40,690 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:43:40,691 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:43:40,691 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:43:40,692 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:43:40,693 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:43:40,693 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:43:40,693 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 21:43:40,694 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 21:43:40,694 - auto_study - INFO - 开始登录用户: majun
+2025-09-03 21:43:40,694 - auto_study - INFO - 开始登录用户: majun
+2025-09-03 21:43:40,694 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 21:43:48,596 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:43:48,612 - auto_study - INFO - 登录表单已加载
+2025-09-03 21:43:48,613 - auto_study - INFO - 填写用户名
+2025-09-03 21:43:49,623 - auto_study - INFO - 填写密码
+2025-09-03 21:43:50,634 - auto_study - INFO - 检查验证码
+2025-09-03 21:43:50,648 - auto_study - INFO - 找到验证码图片
+2025-09-03 21:43:50,648 - auto_study - INFO - 截取验证码图片
+2025-09-03 21:43:50,702 - auto_study - INFO - 识别验证码
+2025-09-03 21:43:50,716 - auto_study - INFO - 识别结果: 9239
+2025-09-03 21:43:51,727 - auto_study - INFO - 验证码填写完成
+2025-09-03 21:43:51,729 - auto_study - INFO - 点击登录按钮
+2025-09-03 21:43:54,765 - auto_study - INFO - 检查登录状态
+2025-09-03 21:43:57,769 - auto_study - INFO - 当前URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:43:57,778 - auto_study - ERROR - 登录状态检查失败: Locator.is_visible: Target page, context or browser has been closed
+2025-09-03 21:43:57,778 - auto_study - ERROR - 登录失败
+2025-09-03 21:43:57,779 - auto_study - ERROR - ❌ 登录失败: majun - 登录验证失败
+2025-09-03 21:43:57,779 - auto_study - WARNING - 第1次尝试失败: 登录验证失败, 2.0秒后重试...
+2025-09-03 21:43:59,780 - auto_study - INFO - 开始登录用户: majun
+2025-09-03 21:43:59,781 - auto_study - INFO - 开始登录用户: majun
+2025-09-03 21:43:59,782 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 21:43:59,786 - auto_study - ERROR - 登录过程异常: Page.goto: Target page, context or browser has been closed
+2025-09-03 21:43:59,788 - auto_study - ERROR - Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/automation/auto_login.py", line 49, in login
+    await self.page.goto(self.login_url)
+  File "/Users/majun/Prog/auto_study/venv/lib/python3.13/site-packages/playwright/async_api/_generated.py", line 8992, in goto
+    await self._impl_obj.goto(
+        url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+    )
+  File "/Users/majun/Prog/auto_study/venv/lib/python3.13/site-packages/playwright/_impl/_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/venv/lib/python3.13/site-packages/playwright/_impl/_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "/Users/majun/Prog/auto_study/venv/lib/python3.13/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/majun/Prog/auto_study/venv/lib/python3.13/site-packages/playwright/_impl/_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+
+2025-09-03 21:43:59,792 - auto_study - ERROR - ❌ 登录失败: majun - 登录验证失败
+2025-09-03 21:43:59,793 - auto_study - WARNING - 第2次尝试失败: 登录验证失败, 2.0秒后重试...
+2025-09-03 21:44:01,795 - auto_study - INFO - 开始登录用户: majun
+2025-09-03 21:44:01,798 - auto_study - INFO - 开始登录用户: majun
+2025-09-03 21:44:01,799 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 21:44:01,802 - auto_study - ERROR - 登录过程异常: Page.goto: Target page, context or browser has been closed
+2025-09-03 21:44:01,804 - auto_study - ERROR - Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/automation/auto_login.py", line 49, in login
+    await self.page.goto(self.login_url)
+  File "/Users/majun/Prog/auto_study/venv/lib/python3.13/site-packages/playwright/async_api/_generated.py", line 8992, in goto
+    await self._impl_obj.goto(
+        url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+    )
+  File "/Users/majun/Prog/auto_study/venv/lib/python3.13/site-packages/playwright/_impl/_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/venv/lib/python3.13/site-packages/playwright/_impl/_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "/Users/majun/Prog/auto_study/venv/lib/python3.13/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/majun/Prog/auto_study/venv/lib/python3.13/site-packages/playwright/_impl/_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+
+2025-09-03 21:44:01,807 - auto_study - ERROR - ❌ 登录失败: majun - 登录验证失败
+2025-09-03 21:44:01,808 - auto_study - ERROR - 所有重试失败: 登录验证失败
+2025-09-03 21:44:01,808 - auto_study - ERROR - 💥 错误: 登录验证失败 - 上下文: 应用运行异常
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 196, in run
+    if not await self.login():
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/utils/error_handler.py", line 64, in async_wrapper
+    raise last_exception
+  File "/Users/majun/Prog/auto_study/src/auto_study/utils/error_handler.py", line 52, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 72, in login
+    raise LoginError("登录验证失败")
+src.auto_study.utils.error_handler.LoginError: 登录验证失败
+2025-09-03 21:44:01,912 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 21:44:01,913 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 21:44:01,913 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 21:48:49,930 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 21:48:49,946 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 21:48:50,584 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:48:50,585 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:48:50,586 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:48:50,586 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:48:50,586 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 21:48:58,296 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:48:58,316 - auto_study - INFO - 登录表单已加载
+2025-09-03 21:48:58,316 - auto_study - INFO - 填写用户名
+2025-09-03 21:48:59,328 - auto_study - INFO - 填写密码
+2025-09-03 21:49:00,338 - auto_study - INFO - 检查验证码
+2025-09-03 21:49:00,353 - auto_study - INFO - 找到验证码图片
+2025-09-03 21:49:00,354 - auto_study - INFO - 截取验证码图片
+2025-09-03 21:49:00,396 - auto_study - INFO - 识别验证码
+2025-09-03 21:49:00,410 - auto_study - INFO - 识别结果: 4947
+2025-09-03 21:49:01,418 - auto_study - INFO - 验证码填写完成
+2025-09-03 21:49:01,419 - auto_study - INFO - 点击登录按钮
+2025-09-03 21:49:04,453 - auto_study - INFO - 检查登录状态
+2025-09-03 21:49:07,456 - auto_study - INFO - 当前URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:49:07,471 - auto_study - INFO - 无明确的失败标识，假定登录成功
+2025-09-03 21:49:07,473 - auto_study - INFO - 登录成功!
+2025-09-03 21:50:20,791 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 21:50:20,807 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 21:50:20,838 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:50:20,838 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:50:20,839 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:50:20,839 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 21:50:21,231 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 21:50:21,420 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 21:50:21,438 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:50:21,438 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:50:21,439 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:50:21,440 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:50:21,440 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:50:21,441 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:50:21,441 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 21:50:21,442 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 21:50:21,442 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:50:21,442 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:50:21,442 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 21:50:30,986 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:50:31,018 - auto_study - INFO - 登录表单已加载
+2025-09-03 21:50:31,018 - auto_study - INFO - 填写用户名
+2025-09-03 21:50:32,032 - auto_study - INFO - 填写密码
+2025-09-03 21:50:33,043 - auto_study - INFO - 检查验证码
+2025-09-03 21:50:33,047 - auto_study - INFO - 找到验证码图片
+2025-09-03 21:50:33,047 - auto_study - INFO - 截取验证码图片
+2025-09-03 21:50:33,085 - auto_study - INFO - 识别验证码
+2025-09-03 21:50:33,099 - auto_study - INFO - 识别结果: 5161
+2025-09-03 21:50:34,109 - auto_study - INFO - 验证码填写完成
+2025-09-03 21:50:34,111 - auto_study - INFO - 点击登录按钮
+2025-09-03 21:50:37,146 - auto_study - INFO - 检查登录状态
+2025-09-03 21:50:40,149 - auto_study - INFO - 当前URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:50:40,166 - auto_study - INFO - 无明确的失败标识，假定登录成功
+2025-09-03 21:50:40,167 - auto_study - INFO - 登录成功!
+2025-09-03 21:50:40,167 - auto_study - INFO - 🔐 登录成功: 640302198607120020
+2025-09-03 21:50:40,167 - auto_study - INFO - 获取课程列表...
+2025-09-03 21:50:40,167 - auto_study - ERROR - 💥 错误: 'CourseManager' object has no attribute 'load_courses' - 上下文: 获取课程列表失败
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 84, in get_courses
+    await self.course_manager.load_courses()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CourseManager' object has no attribute 'load_courses'. Did you mean: 'get_courses'?
+2025-09-03 21:50:40,168 - auto_study - ERROR - 💥 错误: 'CourseManager' object has no attribute 'load_courses' - 上下文: 自动学习过程出错
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 112, in start_learning
+    courses = await self.get_courses()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 84, in get_courses
+    await self.course_manager.load_courses()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CourseManager' object has no attribute 'load_courses'. Did you mean: 'get_courses'?
+2025-09-03 21:50:40,286 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 21:50:40,286 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 21:50:40,287 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 21:55:44,829 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 21:55:44,844 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 21:56:30,936 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 21:56:30,953 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 21:56:30,978 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:56:30,979 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:56:30,979 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:56:30,979 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 21:56:30,980 - auto_study - INFO - 保存了 3 个课程记录
+2025-09-03 21:56:30,980 - auto_study - INFO - 课程优先级排序完成，共 3 个课程
+2025-09-03 21:57:31,823 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 21:57:31,840 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 21:57:31,867 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:57:31,868 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:57:31,869 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:57:31,869 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 21:57:32,281 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 21:57:32,482 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 21:57:32,500 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:57:32,501 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:57:32,501 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:57:32,502 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:57:32,503 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:57:32,503 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:57:32,503 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 21:57:32,504 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 21:57:32,504 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:57:32,504 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:57:32,504 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 21:57:40,764 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:57:40,778 - auto_study - INFO - 登录表单已加载
+2025-09-03 21:57:40,779 - auto_study - INFO - 填写用户名
+2025-09-03 21:57:41,788 - auto_study - INFO - 填写密码
+2025-09-03 21:57:42,804 - auto_study - INFO - 检查验证码
+2025-09-03 21:57:42,814 - auto_study - INFO - 找到验证码图片
+2025-09-03 21:57:42,815 - auto_study - INFO - 截取验证码图片
+2025-09-03 21:57:42,868 - auto_study - INFO - 识别验证码
+2025-09-03 21:57:42,885 - auto_study - INFO - 识别结果: 7468
+2025-09-03 21:57:43,893 - auto_study - INFO - 验证码填写完成
+2025-09-03 21:57:43,894 - auto_study - INFO - 点击登录按钮
+2025-09-03 21:57:46,925 - auto_study - INFO - 检查登录状态
+2025-09-03 21:57:49,927 - auto_study - INFO - 当前URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:57:49,952 - auto_study - INFO - 无明确的失败标识，假定登录成功
+2025-09-03 21:57:49,953 - auto_study - INFO - 登录成功!
+2025-09-03 21:57:49,953 - auto_study - INFO - 🔐 登录成功: 640302198607120020
+2025-09-03 21:57:49,954 - auto_study - INFO - 获取课程列表...
+2025-09-03 21:57:49,955 - auto_study - INFO - 加载了 3 个课程记录
+2025-09-03 21:57:49,955 - auto_study - INFO - 找到 3 门课程
+2025-09-03 21:57:49,956 - auto_study - INFO - 已完成: 1, 待学习: 2
+2025-09-03 21:57:50,082 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 21:57:50,082 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 21:57:50,083 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 21:58:29,589 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 21:58:29,605 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 21:58:29,636 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:58:29,637 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:58:29,637 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:58:29,637 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 21:58:30,061 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 21:58:30,265 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 21:58:30,283 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:58:30,284 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:58:30,284 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:58:30,286 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:58:30,286 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:58:30,287 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:58:30,287 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 21:58:30,287 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 21:58:30,288 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:58:30,288 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:58:30,288 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 21:58:39,763 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:58:39,790 - auto_study - INFO - 登录表单已加载
+2025-09-03 21:58:39,791 - auto_study - INFO - 填写用户名
+2025-09-03 21:58:40,805 - auto_study - INFO - 填写密码
+2025-09-03 21:58:41,819 - auto_study - INFO - 检查验证码
+2025-09-03 21:58:41,823 - auto_study - INFO - 找到验证码图片
+2025-09-03 21:58:41,823 - auto_study - INFO - 截取验证码图片
+2025-09-03 21:58:41,860 - auto_study - INFO - 识别验证码
+2025-09-03 21:58:41,874 - auto_study - INFO - 识别结果: 5077
+2025-09-03 21:58:42,883 - auto_study - INFO - 验证码填写完成
+2025-09-03 21:58:42,883 - auto_study - INFO - 点击登录按钮
+2025-09-03 21:58:45,916 - auto_study - INFO - 检查登录状态
+2025-09-03 21:58:48,919 - auto_study - INFO - 当前URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 21:58:48,936 - auto_study - INFO - 无明确的失败标识，假定登录成功
+2025-09-03 21:58:48,936 - auto_study - INFO - 登录成功!
+2025-09-03 21:58:48,936 - auto_study - INFO - 🔐 登录成功: 640302198607120020
+2025-09-03 21:58:48,937 - auto_study - INFO - 获取课程列表...
+2025-09-03 21:58:48,938 - auto_study - INFO - 加载了 3 个课程记录
+2025-09-03 21:58:48,938 - auto_study - INFO - 找到 3 门课程
+2025-09-03 21:58:48,938 - auto_study - INFO - 已完成: 1, 待学习: 2
+2025-09-03 21:58:48,939 - auto_study - INFO - 课程优先级排序完成，共 2 个课程
+2025-09-03 21:58:48,939 - auto_study - INFO - 开始学习 2 门待完成课程...
+2025-09-03 21:58:48,939 - auto_study - INFO - [1/2] 开始学习: 测试课程2
+2025-09-03 21:58:48,939 - auto_study - INFO - 🎓 开始学习课程: 测试课程2
+2025-09-03 21:58:48,940 - auto_study - ERROR - 💥 错误: 'LearningAutomator' object has no attribute 'start_learning_course' - 上下文: 自动学习过程出错
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 139, in start_learning
+    success = await self.learning_automator.start_learning_course(course)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LearningAutomator' object has no attribute 'start_learning_course'
+2025-09-03 21:58:49,064 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 21:58:49,064 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 21:58:49,065 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 21:59:58,008 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 21:59:58,024 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 21:59:58,055 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:59:58,056 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:59:58,056 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:59:58,057 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 21:59:58,480 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 21:59:58,677 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 21:59:58,696 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:59:58,697 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:59:58,698 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:59:58,699 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 21:59:58,700 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 21:59:58,700 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 21:59:58,700 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 21:59:58,700 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 21:59:58,701 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:59:58,701 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 21:59:58,701 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 22:00:08,180 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 22:00:08,212 - auto_study - INFO - 登录表单已加载
+2025-09-03 22:00:08,213 - auto_study - INFO - 填写用户名
+2025-09-03 22:00:09,228 - auto_study - INFO - 填写密码
+2025-09-03 22:00:10,260 - auto_study - INFO - 检查验证码
+2025-09-03 22:00:10,267 - auto_study - INFO - 找到验证码图片
+2025-09-03 22:00:10,268 - auto_study - INFO - 截取验证码图片
+2025-09-03 22:00:10,317 - auto_study - INFO - 识别验证码
+2025-09-03 22:00:10,333 - auto_study - INFO - 识别结果: 1897
+2025-09-03 22:00:11,342 - auto_study - INFO - 验证码填写完成
+2025-09-03 22:00:11,342 - auto_study - INFO - 点击登录按钮
+2025-09-03 22:00:14,373 - auto_study - INFO - 检查登录状态
+2025-09-03 22:00:17,377 - auto_study - INFO - 当前URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 22:00:17,405 - auto_study - INFO - 无明确的失败标识，假定登录成功
+2025-09-03 22:00:17,406 - auto_study - INFO - 登录成功!
+2025-09-03 22:00:17,406 - auto_study - INFO - 🔐 登录成功: 640302198607120020
+2025-09-03 22:00:17,407 - auto_study - INFO - 获取课程列表...
+2025-09-03 22:00:17,408 - auto_study - INFO - 加载了 3 个课程记录
+2025-09-03 22:00:17,408 - auto_study - INFO - 找到 3 门课程
+2025-09-03 22:00:17,409 - auto_study - INFO - 已完成: 1, 待学习: 2
+2025-09-03 22:00:17,409 - auto_study - INFO - 课程优先级排序完成，共 2 个课程
+2025-09-03 22:00:17,409 - auto_study - INFO - 开始学习 2 门待完成课程...
+2025-09-03 22:00:17,410 - auto_study - INFO - [1/2] 开始学习: 测试课程2
+2025-09-03 22:00:17,410 - auto_study - INFO - 🎓 开始学习课程: 测试课程2
+2025-09-03 22:00:17,410 - auto_study - ERROR - 💥 错误: 'LearningAutomator' object has no attribute 'start_learning_course' - 上下文: 自动学习过程出错
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 139, in start_learning
+    success = await self.learning_automator.start_learning_course(course)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LearningAutomator' object has no attribute 'start_learning_course'
+2025-09-03 22:00:17,513 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 22:00:17,513 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 22:00:17,514 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 22:01:48,351 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 22:01:48,367 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 22:01:48,400 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:01:48,401 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:01:48,402 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:01:48,402 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 22:01:48,806 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 22:01:49,017 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 22:01:49,035 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:01:49,036 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:01:49,037 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:01:49,038 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:01:49,039 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:01:49,039 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:01:49,040 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 22:01:49,040 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 22:01:49,040 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 22:01:49,040 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 22:01:49,041 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 22:01:59,163 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 22:01:59,177 - auto_study - INFO - 登录表单已加载
+2025-09-03 22:01:59,177 - auto_study - INFO - 填写用户名
+2025-09-03 22:02:00,188 - auto_study - INFO - 填写密码
+2025-09-03 22:02:01,199 - auto_study - INFO - 检查验证码
+2025-09-03 22:02:01,213 - auto_study - INFO - 找到验证码图片
+2025-09-03 22:02:01,214 - auto_study - INFO - 截取验证码图片
+2025-09-03 22:02:01,270 - auto_study - INFO - 识别验证码
+2025-09-03 22:02:01,287 - auto_study - INFO - 识别结果: 4750
+2025-09-03 22:02:02,296 - auto_study - INFO - 验证码填写完成
+2025-09-03 22:02:02,299 - auto_study - INFO - 点击登录按钮
+2025-09-03 22:02:05,331 - auto_study - INFO - 检查登录状态
+2025-09-03 22:02:06,561 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 22:02:06,581 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 22:02:07,618 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:02:07,619 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:02:07,620 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:02:07,620 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 22:02:07,620 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 22:02:08,334 - auto_study - INFO - 当前URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 22:02:08,354 - auto_study - INFO - 无明确的失败标识，假定登录成功
+2025-09-03 22:02:08,354 - auto_study - INFO - 登录成功!
+2025-09-03 22:02:08,354 - auto_study - INFO - 🔐 登录成功: 640302198607120020
+2025-09-03 22:02:08,355 - auto_study - INFO - 获取课程列表...
+2025-09-03 22:02:08,356 - auto_study - INFO - 加载了 3 个课程记录
+2025-09-03 22:02:08,356 - auto_study - INFO - 找到 3 门课程
+2025-09-03 22:02:08,357 - auto_study - INFO - 已完成: 1, 待学习: 2
+2025-09-03 22:02:08,357 - auto_study - INFO - 课程优先级排序完成，共 2 个课程
+2025-09-03 22:02:08,357 - auto_study - INFO - 开始学习 2 门待完成课程...
+2025-09-03 22:02:08,357 - auto_study - INFO - [1/2] 开始学习: 测试课程2
+2025-09-03 22:02:08,358 - auto_study - INFO - 🎓 开始学习课程: 测试课程2
+2025-09-03 22:02:08,358 - auto_study - ERROR - 💥 错误: 'LearningAutomator' object has no attribute 'start_learning_course' - 上下文: 自动学习过程出错
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 139, in start_learning
+    success = await self.learning_automator.start_learning_course(course)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LearningAutomator' object has no attribute 'start_learning_course'
+2025-09-03 22:02:08,466 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 22:02:08,466 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 22:02:08,467 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 22:02:14,745 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 22:02:14,777 - auto_study - INFO - 登录表单已加载
+2025-09-03 22:02:14,778 - auto_study - INFO - 填写用户名
+2025-09-03 22:02:15,791 - auto_study - INFO - 填写密码
+2025-09-03 22:02:16,808 - auto_study - INFO - 检查验证码
+2025-09-03 22:02:16,813 - auto_study - INFO - 找到验证码图片
+2025-09-03 22:02:16,813 - auto_study - INFO - 截取验证码图片
+2025-09-03 22:02:16,969 - auto_study - INFO - 识别验证码
+2025-09-03 22:02:16,982 - auto_study - INFO - 识别结果: 2393
+2025-09-03 22:02:17,989 - auto_study - INFO - 验证码填写完成
+2025-09-03 22:02:17,989 - auto_study - INFO - 点击登录按钮
+2025-09-03 22:02:21,015 - auto_study - INFO - 检查登录状态
+2025-09-03 22:02:24,018 - auto_study - INFO - 当前URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 22:02:24,042 - auto_study - INFO - 无明确的失败标识，假定登录成功
+2025-09-03 22:02:24,045 - auto_study - INFO - 登录成功!
+2025-09-03 22:02:24,047 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:02:24,048 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:02:24,049 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:02:24,049 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 22:06:11,835 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 22:06:11,851 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 22:06:11,881 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:06:11,882 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:06:11,882 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:06:11,883 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 22:06:12,289 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 22:06:12,494 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 22:06:12,513 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:06:12,513 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:06:12,514 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:06:12,515 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:06:12,516 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:06:12,516 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:06:12,517 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 22:06:12,517 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 22:06:12,517 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 22:06:12,518 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 22:06:12,518 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 22:06:20,684 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 22:06:20,699 - auto_study - INFO - 登录表单已加载
+2025-09-03 22:06:20,700 - auto_study - INFO - 填写用户名
+2025-09-03 22:06:21,712 - auto_study - INFO - 填写密码
+2025-09-03 22:06:22,734 - auto_study - INFO - 检查验证码
+2025-09-03 22:06:22,744 - auto_study - INFO - 找到验证码图片
+2025-09-03 22:06:22,745 - auto_study - INFO - 截取验证码图片
+2025-09-03 22:06:22,798 - auto_study - INFO - 识别验证码
+2025-09-03 22:06:22,811 - auto_study - INFO - 识别结果: 6477
+2025-09-03 22:06:23,821 - auto_study - INFO - 验证码填写完成
+2025-09-03 22:06:23,823 - auto_study - INFO - 点击登录按钮
+2025-09-03 22:06:26,854 - auto_study - INFO - 检查登录状态
+2025-09-03 22:06:29,856 - auto_study - INFO - 当前URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 22:06:29,887 - auto_study - INFO - 无明确的失败标识，假定登录成功
+2025-09-03 22:06:29,887 - auto_study - INFO - 登录成功!
+2025-09-03 22:06:29,888 - auto_study - INFO - 🔐 登录成功: 640302198607120020
+2025-09-03 22:06:29,888 - auto_study - INFO - 获取课程列表...
+2025-09-03 22:06:29,889 - auto_study - INFO - 加载了 3 个课程记录
+2025-09-03 22:06:29,889 - auto_study - INFO - 找到 3 门课程
+2025-09-03 22:06:29,890 - auto_study - INFO - 已完成: 1, 待学习: 2
+2025-09-03 22:06:34,201 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 22:06:34,201 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 22:06:34,202 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 22:08:58,873 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 22:08:58,890 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 22:08:58,919 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:08:58,920 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:08:58,920 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:08:58,920 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 22:08:59,325 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 22:08:59,526 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 22:08:59,544 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:08:59,545 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:08:59,545 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:08:59,546 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:08:59,547 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:08:59,547 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:08:59,547 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 22:08:59,548 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 22:08:59,548 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 22:08:59,548 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 22:08:59,548 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 22:09:08,444 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 22:09:08,459 - auto_study - INFO - 登录表单已加载
+2025-09-03 22:09:08,459 - auto_study - INFO - 填写用户名
+2025-09-03 22:09:09,470 - auto_study - INFO - 填写密码
+2025-09-03 22:09:10,494 - auto_study - INFO - 检查验证码
+2025-09-03 22:09:10,499 - auto_study - INFO - 找到验证码图片
+2025-09-03 22:09:10,499 - auto_study - INFO - 截取验证码图片
+2025-09-03 22:09:10,539 - auto_study - INFO - 识别验证码
+2025-09-03 22:09:10,551 - auto_study - INFO - 识别结果: 7419
+2025-09-03 22:09:11,561 - auto_study - INFO - 验证码填写完成
+2025-09-03 22:09:11,561 - auto_study - INFO - 点击登录按钮
+2025-09-03 22:09:14,583 - auto_study - INFO - 检查登录状态
+2025-09-03 22:09:17,585 - auto_study - INFO - 当前URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 22:09:17,592 - auto_study - INFO - 找到登录成功标识: [class*="user"]
+2025-09-03 22:09:17,593 - auto_study - INFO - 登录成功!
+2025-09-03 22:09:17,593 - auto_study - INFO - 🔐 登录成功: 640302198607120020
+2025-09-03 22:09:17,593 - auto_study - INFO - 获取课程列表...
+2025-09-03 22:09:17,595 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:09:17,596 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:09:17,596 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:09:17,596 - auto_study - INFO - 访问课程页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/study_center/tool_box/required?id=275
+2025-09-03 22:09:22,613 - auto_study - INFO - 找到 43 个课程元素: [class*="course"]
+2025-09-03 22:09:22,618 - auto_study - INFO - 找到 36 个课程元素: li
+2025-09-03 22:09:22,618 - auto_study - INFO - 使用选择器: [class*="course"] (共 43 个元素)
+2025-09-03 22:09:22,630 - auto_study - INFO - 提取课程: 最新专题更多 +
+2025-09-03 22:09:22,637 - auto_study - INFO - 提取课程: 最新专题
+2025-09-03 22:09:22,645 - auto_study - INFO - 提取课程: 最新专题
+2025-09-03 22:09:22,653 - auto_study - INFO - 提取课程: 最新专题
+2025-09-03 22:09:22,683 - auto_study - INFO - 提取课程: ...
+2025-09-03 22:09:22,691 - auto_study - INFO - 提取课程: ...
+2025-09-03 22:09:22,691 - auto_study - INFO - 成功提取 6 门课程
+2025-09-03 22:09:22,692 - auto_study - INFO - 找到 6 门课程
+2025-09-03 22:09:22,692 - auto_study - INFO - 已完成: 0, 待学习: 6
+2025-09-03 22:09:27,766 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 22:09:27,766 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 22:09:27,766 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 22:10:26,774 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 22:10:26,790 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 22:10:26,819 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:10:26,820 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:10:26,820 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:10:26,820 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 22:10:27,232 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 22:10:27,434 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 22:10:27,453 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:10:27,453 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:10:27,454 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:10:27,455 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:10:27,456 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:10:27,456 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:10:27,456 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 22:10:27,456 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 22:10:27,457 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 22:10:27,457 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 22:10:27,457 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 22:10:35,552 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 22:10:35,567 - auto_study - INFO - 登录表单已加载
+2025-09-03 22:10:35,567 - auto_study - INFO - 填写用户名
+2025-09-03 22:10:36,580 - auto_study - INFO - 填写密码
+2025-09-03 22:10:37,604 - auto_study - INFO - 检查验证码
+2025-09-03 22:10:37,617 - auto_study - INFO - 找到验证码图片
+2025-09-03 22:10:37,618 - auto_study - INFO - 截取验证码图片
+2025-09-03 22:10:37,667 - auto_study - INFO - 识别验证码
+2025-09-03 22:10:37,679 - auto_study - INFO - 识别结果: 4690
+2025-09-03 22:10:38,690 - auto_study - INFO - 验证码填写完成
+2025-09-03 22:10:38,692 - auto_study - INFO - 点击登录按钮
+2025-09-03 22:10:41,727 - auto_study - INFO - 检查登录状态
+2025-09-03 22:10:44,729 - auto_study - INFO - 当前URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 22:10:44,740 - auto_study - INFO - 找到登录成功标识: [class*="user"]
+2025-09-03 22:10:44,741 - auto_study - INFO - 登录成功!
+2025-09-03 22:10:44,742 - auto_study - INFO - 🔐 登录成功: 640302198607120020
+2025-09-03 22:10:44,742 - auto_study - INFO - 获取课程列表...
+2025-09-03 22:10:44,745 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:10:44,746 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:10:44,747 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:10:44,747 - auto_study - INFO - 访问课程页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/study_center/tool_box/required?id=275
+2025-09-03 22:10:49,775 - auto_study - WARNING - 未找到课程元素
+2025-09-03 22:10:49,776 - auto_study - ERROR - 💥 错误: 未找到任何课程 - 上下文: 获取课程列表失败
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 100, in get_courses
+    raise CourseError("未找到任何课程")
+src.auto_study.utils.error_handler.CourseError: 未找到任何课程
+2025-09-03 22:10:49,777 - auto_study - ERROR - 💥 错误: 未找到任何课程 - 上下文: 自动学习过程出错
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 123, in start_learning
+    courses = await self.get_courses()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 100, in get_courses
+    raise CourseError("未找到任何课程")
+src.auto_study.utils.error_handler.CourseError: 未找到任何课程
+2025-09-03 22:10:49,881 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 22:10:49,882 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 22:10:49,882 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 22:10:54,678 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 22:10:54,694 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 22:10:54,722 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:10:54,723 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:10:54,723 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:10:54,723 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 22:10:55,107 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 22:10:55,242 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 22:10:55,259 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:10:55,260 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:10:55,261 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:10:55,262 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:10:55,263 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:10:55,263 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:10:55,263 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 22:10:55,263 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 22:10:55,264 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 22:10:55,264 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 22:10:55,264 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 22:11:11,602 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 22:11:11,633 - auto_study - INFO - 登录表单已加载
+2025-09-03 22:11:11,633 - auto_study - INFO - 填写用户名
+2025-09-03 22:11:12,647 - auto_study - INFO - 填写密码
+2025-09-03 22:11:13,669 - auto_study - INFO - 检查验证码
+2025-09-03 22:11:13,681 - auto_study - INFO - 找到验证码图片
+2025-09-03 22:11:13,682 - auto_study - INFO - 截取验证码图片
+2025-09-03 22:11:13,738 - auto_study - INFO - 识别验证码
+2025-09-03 22:11:13,752 - auto_study - INFO - 识别结果: 1526
+2025-09-03 22:11:14,763 - auto_study - INFO - 验证码填写完成
+2025-09-03 22:11:14,768 - auto_study - INFO - 点击登录按钮
+2025-09-03 22:11:17,808 - auto_study - INFO - 检查登录状态
+2025-09-03 22:11:20,810 - auto_study - INFO - 当前URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 22:11:20,841 - auto_study - INFO - 无明确的失败标识，假定登录成功
+2025-09-03 22:11:20,842 - auto_study - INFO - 登录成功!
+2025-09-03 22:11:20,842 - auto_study - INFO - 🔐 登录成功: 640302198607120020
+2025-09-03 22:11:20,842 - auto_study - INFO - 获取课程列表...
+2025-09-03 22:11:20,844 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:11:20,845 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:11:20,845 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:11:20,846 - auto_study - INFO - 访问课程页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/study_center/tool_box/required?id=275
+2025-09-03 22:11:25,873 - auto_study - INFO - 找到 28 个课程元素: [class*="course"]
+2025-09-03 22:11:25,885 - auto_study - INFO - 找到 55 个课程元素: li
+2025-09-03 22:11:25,885 - auto_study - INFO - 使用选择器: [class*="course"] (共 28 个元素)
+2025-09-03 22:11:25,931 - auto_study - INFO - 提取课程: ...
+2025-09-03 22:11:25,942 - auto_study - INFO - 提取课程: ...
+2025-09-03 22:11:25,952 - auto_study - INFO - 提取课程: ...
+2025-09-03 22:11:25,961 - auto_study - INFO - 提取课程: ...
+2025-09-03 22:11:25,971 - auto_study - INFO - 提取课程: ...
+2025-09-03 22:11:25,980 - auto_study - INFO - 提取课程: ...
+2025-09-03 22:11:25,990 - auto_study - INFO - 提取课程: ...
+2025-09-03 22:11:25,990 - auto_study - INFO - 成功提取 7 门课程
+2025-09-03 22:11:25,990 - auto_study - INFO - 找到 7 门课程
+2025-09-03 22:11:25,990 - auto_study - INFO - 已完成: 0, 待学习: 7
+2025-09-03 22:11:25,991 - auto_study - INFO - 加载了 3 个课程记录
+2025-09-03 22:11:25,991 - auto_study - INFO - 课程优先级排序完成，共 2 个课程
+2025-09-03 22:11:25,991 - auto_study - INFO - 开始学习 2 门待完成课程...
+2025-09-03 22:11:25,991 - auto_study - INFO - [1/2] 开始学习: 测试课程2
+2025-09-03 22:11:25,992 - auto_study - INFO - 🎓 开始学习课程: 测试课程2
+2025-09-03 22:11:25,992 - auto_study - INFO - 开始学习课程: 测试课程2
+2025-09-03 22:11:25,992 - auto_study - INFO - 访问课程页面: http://example.com/course2
+2025-09-03 22:11:32,013 - auto_study - WARNING - 课程页面未检测到视频播放器: 测试课程2
+2025-09-03 22:11:32,020 - auto_study - WARNING - 仍然未检测到视频播放器，跳过课程: 测试课程2
+2025-09-03 22:11:32,021 - auto_study - ERROR - 课程学习失败: 测试课程2
+2025-09-03 22:11:32,021 - auto_study - INFO - [2/2] 开始学习: 测试课程1
+2025-09-03 22:11:32,021 - auto_study - INFO - 🎓 开始学习课程: 测试课程1
+2025-09-03 22:11:32,021 - auto_study - INFO - 开始学习课程: 测试课程1
+2025-09-03 22:11:32,021 - auto_study - INFO - 访问课程页面: http://example.com/course1
+2025-09-03 22:11:37,532 - auto_study - WARNING - 课程页面未检测到视频播放器: 测试课程1
+2025-09-03 22:11:37,542 - auto_study - WARNING - 仍然未检测到视频播放器，跳过课程: 测试课程1
+2025-09-03 22:11:37,542 - auto_study - ERROR - 课程学习失败: 测试课程1
+2025-09-03 22:11:37,543 - auto_study - INFO - 🏆 所有课程学习完成!
+2025-09-03 22:11:37,644 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 22:11:37,644 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 22:11:37,644 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 22:17:53,925 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 22:17:53,942 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 22:17:53,969 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:17:53,970 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:17:53,971 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:17:53,971 - auto_study - INFO - ⚙️  系统状态: 初始化 开始启动系统...
+2025-09-03 22:17:54,372 - auto_study - INFO - 浏览器启动成功: chromium
+2025-09-03 22:17:54,561 - auto_study - INFO - 新异步页面创建成功，当前页面数: 1
+2025-09-03 22:17:54,580 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:17:54,581 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:17:54,581 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:17:54,582 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:17:54,583 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:17:54,583 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:17:54,584 - auto_study - INFO - 课程管理器初始化完成
+2025-09-03 22:17:54,584 - auto_study - INFO - ⚙️  系统状态: 初始化 系统启动完成
+2025-09-03 22:17:54,584 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 22:17:54,584 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 22:17:54,585 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 22:18:04,284 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 22:18:04,306 - auto_study - INFO - 登录表单已加载
+2025-09-03 22:18:04,306 - auto_study - INFO - 填写用户名
+2025-09-03 22:18:05,319 - auto_study - INFO - 填写密码
+2025-09-03 22:18:06,328 - auto_study - INFO - 检查验证码
+2025-09-03 22:18:06,331 - auto_study - INFO - 找到验证码图片
+2025-09-03 22:18:06,331 - auto_study - INFO - 截取验证码图片
+2025-09-03 22:18:06,368 - auto_study - INFO - 识别验证码
+2025-09-03 22:18:06,378 - auto_study - INFO - 识别结果: 6635
+2025-09-03 22:18:07,386 - auto_study - INFO - 验证码填写完成
+2025-09-03 22:18:07,388 - auto_study - INFO - 点击登录按钮
+2025-09-03 22:18:10,415 - auto_study - INFO - 检查登录状态
+2025-09-03 22:18:13,417 - auto_study - INFO - 当前URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 22:18:13,421 - auto_study - INFO - 找到登录成功标识: [class*="user"]
+2025-09-03 22:18:13,422 - auto_study - INFO - 登录成功!
+2025-09-03 22:18:13,422 - auto_study - INFO - 🔐 登录成功: 640302198607120020
+2025-09-03 22:18:13,422 - auto_study - INFO - 获取课程列表...
+2025-09-03 22:18:13,423 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:18:13,424 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:18:13,425 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:18:13,425 - auto_study - INFO - 访问课程页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/study_center/tool_box/required?id=275
+2025-09-03 22:18:28,444 - auto_study - WARNING - 未找到课程列表容器，尝试备用选择器
+2025-09-03 22:18:28,452 - auto_study - WARNING - 未找到课程列表项
+2025-09-03 22:18:28,453 - auto_study - ERROR - 💥 错误: 未找到任何课程 - 上下文: 获取课程列表失败
+Traceback (most recent call last):
+  File "/Users/majun/Prog/auto_study/src/auto_study/main.py", line 100, in get_courses
+    raise CourseError("未找到任何课程")
+auto_study.utils.error_handler.CourseError: 未找到任何课程
+2025-09-03 22:18:28,581 - auto_study - INFO - 异步浏览器资源清理完成
+2025-09-03 22:18:28,581 - auto_study - INFO - 浏览器资源清理完成
+2025-09-03 22:18:28,581 - auto_study - INFO - ⚙️  系统状态: 清理 资源清理完成
+2025-09-03 22:19:21,420 - auto_study - INFO - 验证码识别器初始化成功，模型类型: common
+2025-09-03 22:19:21,436 - auto_study - INFO - 验证码识别器初始化成功，模型类型: number
+2025-09-03 22:19:22,101 - auto_study - INFO - 成功加载配置文件: config/default.yml
+2025-09-03 22:19:22,102 - auto_study - INFO - 成功加载配置文件: config/development.yml
+2025-09-03 22:19:22,103 - auto_study - INFO - 配置加载完成，环境: development
+2025-09-03 22:19:22,103 - auto_study - INFO - 开始登录用户: 640302198607120020
+2025-09-03 22:19:22,103 - auto_study - INFO - 访问登录页面: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/rolling_news?id=notice
+2025-09-03 22:19:31,075 - auto_study - INFO - 实际页面URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 22:19:31,104 - auto_study - INFO - 登录表单已加载
+2025-09-03 22:19:31,104 - auto_study - INFO - 填写用户名
+2025-09-03 22:19:32,117 - auto_study - INFO - 填写密码
+2025-09-03 22:19:33,133 - auto_study - INFO - 检查验证码
+2025-09-03 22:19:33,137 - auto_study - INFO - 找到验证码图片
+2025-09-03 22:19:33,138 - auto_study - INFO - 截取验证码图片
+2025-09-03 22:19:33,179 - auto_study - INFO - 识别验证码
+2025-09-03 22:19:33,191 - auto_study - INFO - 识别结果: 3854
+2025-09-03 22:19:34,199 - auto_study - INFO - 验证码填写完成
+2025-09-03 22:19:34,199 - auto_study - INFO - 点击登录按钮
+2025-09-03 22:19:37,223 - auto_study - INFO - 检查登录状态
+2025-09-03 22:19:40,226 - auto_study - INFO - 当前URL: https://edu.nxgbjy.org.cn/nxxzxy/index.html#/?requireAuth=%2Frolling_news%3Fid%3Dnotice
+2025-09-03 22:19:40,233 - auto_study - INFO - 找到登录成功标识: [class*="user"]
+2025-09-03 22:19:40,233 - auto_study - INFO - 登录成功!
