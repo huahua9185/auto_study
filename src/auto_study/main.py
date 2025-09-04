@@ -132,34 +132,45 @@ class AutoStudyApp:
                 logger.info("🎉 所有课程已完成!")
                 return True
             
-            logger.info(f"开始学习 {len(pending_courses)} 门待完成课程...")
+            # 确保开始前没有活动的学习会话
+            if hasattr(self.learning_automator, 'current_session') and self.learning_automator.current_session:
+                logger.info("检测到活动的学习会话，停止后开始新的学习流程")
+                await self.learning_automator.stop_learning()
+                await asyncio.sleep(2)
             
-            # 依次学习每门课程
+            logger.info(f"开始串行学习 {len(pending_courses)} 门待完成课程...")
+            logger.info("📋 学习模式：严格串行执行，确保同一时间只学习一门课程")
+            
+            # 依次串行学习每门课程（系统限制：同时最多只能播放一门课程）
             for i, course in enumerate(pending_courses, 1):
                 if not self.is_running:
                     logger.info("用户停止了学习进程")
                     break
                 
-                logger.info(f"[{i}/{len(pending_courses)}] 开始学习: {course.title}")
+                logger.info(f"[{i}/{len(pending_courses)}] 🎯 开始学习课程: {course.title}")
+                logger.info(f"📊 当前进度: {course.progress*100:.1f}% | 讲师: {course.instructor}")
                 logger.log_course_start(course.title)
                 
                 import time
                 start_time = time.time()
                 
-                # 学习课程
+                # 串行学习单门课程（等待当前课程完全完成后才开始下一门）
                 success = await self._learn_single_course(course)
                 
                 if success:
                     end_time = time.time()
                     duration = self._format_duration(end_time - start_time)
                     logger.log_course_complete(course.title, duration)
+                    logger.info(f"✅ 课程 [{i}/{len(pending_courses)}] 学习完成: {course.title}")
                 else:
-                    logger.error(f"课程学习失败: {course.title}")
-                    # 可以选择继续下一门课程或停止
+                    logger.error(f"❌ 课程 [{i}/{len(pending_courses)}] 学习失败: {course.title}")
+                    # 即使当前课程失败也继续下一门课程（串行执行不中断）
                     continue
                 
-                # 短暂休息
-                await asyncio.sleep(5)
+                # 课程间休息，确保系统资源释放和状态重置
+                if i < len(pending_courses):  # 不是最后一门课程
+                    logger.info(f"⏳ 课程间休息5秒，准备学习下一门课程...")
+                    await asyncio.sleep(5)
             
             logger.info("🏆 所有课程学习完成!")
             return True
@@ -171,9 +182,22 @@ class AutoStudyApp:
             self.is_running = False
     
     async def _learn_single_course(self, course) -> bool:
-        """学习单门课程"""
+        """串行学习单门课程（严格确保同时只有一门课程在播放）"""
         try:
-            logger.info(f"开始学习课程: {course.title}")
+            logger.info(f"🔍 准备学习课程: {course.title}")
+            
+            # 第一层保护：确保停止任何正在进行的学习会话
+            if hasattr(self.learning_automator, 'current_session') and self.learning_automator.current_session:
+                logger.info("🛑 检测到活动学习会话，强制停止以确保串行执行")
+                await self.learning_automator.stop_learning()
+                await asyncio.sleep(2)  # 等待完全停止
+            
+            # 第二层保护：验证当前没有活动会话
+            if hasattr(self.learning_automator, 'current_session') and self.learning_automator.current_session:
+                logger.error("⚠️ 无法停止活动学习会话，跳过当前课程以维持串行执行")
+                return False
+            
+            logger.info(f"▶️ 开始串行学习课程: {course.title}")
             
             # 访问课程页面
             if course.url:
@@ -186,35 +210,78 @@ class AutoStudyApp:
                 has_video = await self.learning_automator.video_controller.detect_video_player()
                 if not has_video:
                     logger.warning(f"课程页面未检测到视频播放器: {course.title}")
-                    # 尝试查找课程链接或进入课程按钮
+                    # 尝试从课程列表页面导航到具体课程播放页面
                     try:
-                        # 查找"开始学习"、"进入课程"等按钮
-                        start_buttons = [
-                            'button:has-text("开始学习")',
-                            'button:has-text("进入课程")', 
-                            'a:has-text("开始学习")',
-                            'a:has-text("进入课程")',
-                            '.start-btn',
-                            '.learn-btn',
-                            '.course-btn'
-                        ]
-                        
-                        button_found = False
-                        for selector in start_buttons:
-                            try:
-                                button = page.locator(selector).first
-                                if await button.count() > 0 and await button.is_visible():
-                                    logger.info(f"点击学习按钮: {selector}")
-                                    await button.click()
-                                    await asyncio.sleep(3)
-                                    button_found = True
-                                    break
-                            except:
-                                continue
-                        
-                        if button_found:
+                        # 如果当前在课程列表页面，需要找到对应的课程并点击学习按钮
+                        if "study_center/tool_box/required" in course.url:
+                            logger.info("当前在课程列表页面，尝试找到并点击对应课程的学习按钮")
+                            
+                            # 等待课程列表加载
+                            await page.wait_for_selector('.gj_top_list_box li', timeout=10000)
+                            
+                            # 查找对应课程的学习按钮
+                            course_elements = page.locator('.gj_top_list_box li')
+                            course_count = await course_elements.count()
+                            
+                            for i in range(course_count):
+                                element = course_elements.nth(i)
+                                # 检查是否是目标课程
+                                title_elem = element.locator('.text_title')
+                                if await title_elem.count() > 0:
+                                    title_text = await title_elem.text_content()
+                                    if title_text and course.title in title_text:
+                                        logger.info(f"找到目标课程: {title_text}")
+                                        
+                                        # 点击学习按钮
+                                        learn_button = element.locator('.btn:has-text("继续学习"), .btn:has-text("开始学习"), .btn')
+                                        if await learn_button.count() > 0:
+                                            logger.info("点击学习按钮...")
+                                            await learn_button.click()
+                                            await asyncio.sleep(5)  # 等待页面跳转
+                                            break
+                            
                             # 重新检测视频播放器
                             has_video = await self.learning_automator.video_controller.detect_video_player()
+                        
+                        # 如果还是没有视频播放器，尝试通用的学习按钮
+                        if not has_video:
+                            start_buttons = [
+                                'button:has-text("继续学习")',
+                                'button:has-text("开始学习")',
+                                'button:has-text("进入课程")', 
+                                'a:has-text("继续学习")',
+                                'a:has-text("开始学习")',
+                                'a:has-text("进入课程")',
+                                '.btn:has-text("继续学习")',
+                                '.btn:has-text("开始学习")',
+                                '.start-btn',
+                                '.learn-btn',
+                                '.course-btn',
+                                '.btn'
+                            ]
+                            
+                            button_found = False
+                            for selector in start_buttons:
+                                try:
+                                    buttons = page.locator(selector)
+                                    button_count = await buttons.count()
+                                    for j in range(button_count):
+                                        button = buttons.nth(j)
+                                        if await button.is_visible():
+                                            button_text = await button.text_content()
+                                            logger.info(f"尝试点击按钮: {selector} - {button_text}")
+                                            await button.click()
+                                            await asyncio.sleep(3)
+                                            button_found = True
+                                            break
+                                    if button_found:
+                                        break
+                                except:
+                                    continue
+                            
+                            if button_found:
+                                # 重新检测视频播放器
+                                has_video = await self.learning_automator.video_controller.detect_video_player()
                         
                         if not has_video:
                             logger.warning(f"仍然未检测到视频播放器，跳过课程: {course.title}")
@@ -222,6 +289,9 @@ class AutoStudyApp:
                     except Exception as e:
                         logger.error(f"尝试进入课程失败: {e}")
                         return False
+                
+                # 处理学习确认弹窗（在开始视频学习前）
+                await self._handle_learning_confirmation_popup(page)
                 
                 # 开始视频学习
                 logger.info("开始视频播放...")
@@ -250,6 +320,143 @@ class AutoStudyApp:
             traceback.print_exc()
             return False
     
+    async def _handle_learning_confirmation_popup(self, page):
+        """处理学习确认弹窗"""
+        try:
+            logger.info("检查是否有学习确认弹窗...")
+            
+            # 等待弹窗出现（短时间等待，避免长时间阻塞）
+            await asyncio.sleep(2)
+            
+            # 定义各种可能的弹窗选择器
+            popup_selectors = [
+                # Element UI 弹窗
+                '.el-dialog',
+                '.el-message-box',
+                '.el-popup',
+                
+                # 通用弹窗
+                '.popup',
+                '.modal',
+                '.dialog',
+                '[role="dialog"]',
+                
+                # 自定义弹窗
+                '.study-dialog',
+                '.confirm-dialog',
+                '.learning-popup'
+            ]
+            
+            # 检查是否有弹窗存在
+            popup_found = False
+            popup_element = None
+            
+            for selector in popup_selectors:
+                try:
+                    elements = page.locator(selector)
+                    count = await elements.count()
+                    
+                    for i in range(count):
+                        element = elements.nth(i)
+                        if await element.is_visible():
+                            logger.info(f"发现可见弹窗: {selector}")
+                            popup_element = element
+                            popup_found = True
+                            break
+                    
+                    if popup_found:
+                        break
+                        
+                except Exception as e:
+                    logger.debug(f"检查弹窗选择器 {selector} 失败: {e}")
+                    continue
+            
+            if not popup_found:
+                logger.debug("未发现学习确认弹窗")
+                return True
+            
+            # 在弹窗中查找确认按钮
+            confirm_button_selectors = [
+                # 中文按钮文本
+                'button:has-text("开始学习")',
+                'button:has-text("继续学习")',
+                'button:has-text("确定")',
+                'button:has-text("确认")',
+                'button:has-text("开始")',
+                'button:has-text("学习")',
+                
+                # Element UI 按钮类
+                '.el-button--primary',
+                '.el-button.is-primary',
+                
+                # 通用按钮类
+                '.btn-primary',
+                '.btn-confirm',
+                '.confirm-btn',
+                '.start-btn',
+                '.learn-btn',
+                
+                # 按钮角色
+                'button[type="submit"]',
+                '[role="button"]',
+                
+                # 通用按钮
+                'button'
+            ]
+            
+            button_clicked = False
+            
+            for selector in confirm_button_selectors:
+                try:
+                    # 在弹窗内查找按钮
+                    if popup_element:
+                        buttons = popup_element.locator(selector)
+                    else:
+                        buttons = page.locator(selector)
+                    
+                    button_count = await buttons.count()
+                    
+                    for i in range(button_count):
+                        button = buttons.nth(i)
+                        
+                        if await button.is_visible():
+                            button_text = await button.text_content()
+                            logger.info(f"尝试点击确认按钮: {selector} - 文本: {button_text}")
+                            
+                            # 检查按钮文本是否包含学习相关词汇
+                            if button_text and any(keyword in button_text for keyword in 
+                                ['开始学习', '继续学习', '确定', '确认', '开始', '学习']):
+                                await button.click()
+                                button_clicked = True
+                                logger.info(f"成功点击学习确认按钮: {button_text}")
+                                await asyncio.sleep(2)  # 等待弹窗消失
+                                break
+                            elif not button_text and selector in ['.el-button--primary', '.btn-primary', '.confirm-btn']:
+                                # 对于没有文本但类名表明是主要按钮的，也尝试点击
+                                await button.click()
+                                button_clicked = True
+                                logger.info(f"成功点击主要按钮: {selector}")
+                                await asyncio.sleep(2)
+                                break
+                    
+                    if button_clicked:
+                        break
+                        
+                except Exception as e:
+                    logger.debug(f"尝试点击按钮 {selector} 失败: {e}")
+                    continue
+            
+            if button_clicked:
+                logger.info("学习确认弹窗处理完成")
+                return True
+            else:
+                logger.warning("找到弹窗但未能点击确认按钮")
+                return False
+                
+        except Exception as e:
+            logger.error(f"处理学习确认弹窗失败: {e}")
+            return False
+    
     async def _fetch_courses_from_website(self, page, courses_url: str):
         """从网站获取课程列表"""
         try:
@@ -258,46 +465,146 @@ class AutoStudyApp:
             logger.info(f"访问课程页面: {courses_url}")
             await page.goto(courses_url)
             await page.wait_for_load_state('networkidle')
-            await asyncio.sleep(5)  # 等待页面完全加载
             
-            # 等待课程列表容器加载
-            course_container_selector = '.el-collapse-item__content .gj_top_list_box'
+            # 等待Vue.js应用和Element UI组件完全加载
+            logger.info("等待Vue.js和Element UI组件加载...")
             try:
-                await page.wait_for_selector(course_container_selector, timeout=10000)
-                logger.info("找到课程列表容器")
+                # 等待Vue实例
+                await page.wait_for_function("() => window.Vue !== undefined", timeout=15000)
+                logger.info("Vue.js已加载")
             except:
-                logger.warning("未找到课程列表容器，尝试备用选择器")
+                logger.warning("未检测到Vue.js，继续尝试")
             
-            # 查找课程列表项
+            # 等待Element UI collapse组件
+            try:
+                await page.wait_for_selector('.el-collapse', timeout=10000)
+                logger.info("Element UI collapse组件已加载")
+            except:
+                logger.warning("未找到collapse组件")
+            
+            # 等待课程列表展开状态
+            try:
+                await page.wait_for_selector('.el-collapse-item__content:not(.is-hidden)', timeout=10000)
+                logger.info("课程列表已展开")
+            except:
+                logger.warning("课程列表可能未展开")
+                # 尝试点击展开按钮
+                try:
+                    expand_button = page.locator('.el-collapse-item__header').first
+                    if await expand_button.count() > 0:
+                        await expand_button.click()
+                        await asyncio.sleep(2)
+                        logger.info("已点击展开课程列表")
+                except:
+                    logger.warning("无法点击展开按钮")
+            
+            # 验证页面状态
+            current_url = page.url
+            if "requireAuth" in current_url or "login" in current_url:
+                logger.error("页面跳转到认证页面，可能未正确登录")
+                return []
+            
+            await asyncio.sleep(3)  # 给组件渲染时间
+            
+            # 渐进式选择器发现策略
             course_item_selectors = [
+                # 最具体的选择器（基于用户提供的HTML结构）
+                '.el-collapse-item__content .gj_top_list_box li',
                 '.gj_top_list_box li',
+                # Element UI特定选择器
                 '.el-collapse-item__content li',
+                '.el-collapse-item li',
+                # Vue组件特定选择器（基于data-v-属性）
                 'ul[data-v-31d29258] li',
-                'li[data-v-31d29258]'
+                'li[data-v-31d29258]',
+                # 更通用的fallback选择器
+                '.el-collapse li',
+                'ul li',
+                # 最后的fallback
+                'li'
             ]
             
             courses = []
             course_elements = None
+            successful_selector = None
             
+            # 首先检查课程列表容器是否存在
+            container_selectors = [
+                '.gj_top_list_box',
+                '.el-collapse-item__content',
+                '.el-collapse'
+            ]
+            
+            container_found = False
+            for container_sel in container_selectors:
+                try:
+                    if await page.locator(container_sel).count() > 0:
+                        logger.info(f"找到课程容器: {container_sel}")
+                        container_found = True
+                        break
+                except:
+                    continue
+            
+            if not container_found:
+                logger.error("未找到任何课程容器，可能页面结构已改变")
+                # 调试：打印当前页面的基本信息
+                try:
+                    title = await page.title()
+                    logger.info(f"当前页面标题: {title}")
+                    logger.info(f"当前页面URL: {page.url}")
+                    
+                    # 检查是否有基本的HTML元素
+                    basic_elements = ['div', 'ul', 'li']
+                    for elem in basic_elements:
+                        count = await page.locator(elem).count()
+                        logger.info(f"{elem}元素数量: {count}")
+                        
+                except Exception as e:
+                    logger.error(f"页面调试信息获取失败: {e}")
+                
+                return []
+            
+            # 尝试各种选择器
             for selector in course_item_selectors:
                 try:
                     elements = page.locator(selector)
                     count = await elements.count()
                     if count > 0:
-                        course_elements = elements
-                        logger.info(f"找到 {count} 个课程项: {selector}")
-                        break
+                        # 验证元素是否包含课程相关内容
+                        first_element = elements.first
+                        try:
+                            # 检查是否包含课程标题或进度信息
+                            has_title = await first_element.locator('.text_title, [title]').count() > 0
+                            has_progress = await first_element.locator('.el-progress__text, .progress').count() > 0
+                            has_course_content = await first_element.locator('.text_start, .btn').count() > 0
+                            
+                            if has_title or has_progress or has_course_content:
+                                course_elements = elements
+                                successful_selector = selector
+                                logger.info(f"找到 {count} 个有效课程项: {selector}")
+                                break
+                            else:
+                                logger.debug(f"选择器 {selector} 找到 {count} 个元素，但非课程内容")
+                                
+                        except Exception as e:
+                            logger.debug(f"验证选择器内容时出错: {e}")
+                            # 仍然使用这个选择器
+                            course_elements = elements
+                            successful_selector = selector
+                            logger.info(f"找到 {count} 个课程项: {selector} (未验证内容)")
+                            break
+                            
                 except Exception as e:
                     logger.debug(f"选择器 {selector} 失败: {e}")
                     continue
             
             if not course_elements:
-                logger.warning("未找到课程列表项")
+                logger.error("未找到课程列表项，尝试所有选择器策略均失败")
                 return []
             
             # 提取所有课程
             course_count = await course_elements.count()
-            max_courses = min(20, course_count)  # 最多提取20门课程
+            max_courses = min(50, course_count)  # 最多提取50门课程
             
             for i in range(max_courses):
                 try:
@@ -354,9 +661,52 @@ class AutoStudyApp:
                     except:
                         pass
                     
-                    # 暂时使用当前课程列表页面作为学习URL
-                    # 后续在学习时会通过点击"继续学习"按钮进入实际的课程页面
-                    url = courses_url
+                    # 提取课程的实际学习链接
+                    url = courses_url  # 默认值
+                    try:
+                        # 查找学习按钮或链接
+                        learn_button = element.locator('.btn:has-text("继续学习"), .btn:has-text("开始学习"), .btn:has-text("学习")').first
+                        if await learn_button.count() > 0:
+                            # 尝试获取链接href属性
+                            href = await learn_button.get_attribute('href')
+                            if href:
+                                if href.startswith('http'):
+                                    url = href
+                                elif href.startswith('#'):
+                                    url = f"https://edu.nxgbjy.org.cn/nxxzxy/index.html{href}"
+                                else:
+                                    url = f"https://edu.nxgbjy.org.cn{href}"
+                            else:
+                                # 如果没有href，查找data-id或onclick等属性
+                                data_id = await learn_button.get_attribute('data-id')
+                                onclick = await learn_button.get_attribute('onclick')
+                                
+                                if data_id:
+                                    # 根据数据ID构建课程URL
+                                    url = f"https://edu.nxgbjy.org.cn/nxxzxy/index.html#/study_center/video_play?id={data_id}"
+                                elif onclick and 'openStudy' in onclick:
+                                    # 从onclick事件中提取课程ID
+                                    import re
+                                    match = re.search(r'openStudy\([\'"]([^\'"]+)[\'"]', onclick)
+                                    if match:
+                                        course_id = match.group(1)
+                                        url = f"https://edu.nxgbjy.org.cn/nxxzxy/index.html#/study_center/video_play?id={course_id}"
+                        
+                        # 如果还没有找到具体URL，尝试查找父级链接
+                        if url == courses_url:
+                            parent_link = element.locator('a[href*="study"], a[href*="video"], a[href*="course"]').first
+                            if await parent_link.count() > 0:
+                                href = await parent_link.get_attribute('href')
+                                if href:
+                                    if href.startswith('http'):
+                                        url = href
+                                    elif href.startswith('#'):
+                                        url = f"https://edu.nxgbjy.org.cn/nxxzxy/index.html{href}"
+                                    else:
+                                        url = f"https://edu.nxgbjy.org.cn{href}"
+                    except Exception as e:
+                        logger.debug(f"提取课程URL失败，使用默认URL: {e}")
+                        pass
                     
                     # 根据进度确定状态
                     if progress >= 0.95:
@@ -388,6 +738,26 @@ class AutoStudyApp:
                     continue
             
             logger.info(f"成功提取 {len(courses)} 门课程")
+            
+            # 将提取的课程数据保存到课程管理器
+            self.course_manager._load_courses_cache()
+            for course in courses:
+                # 如果缓存中已存在，保留原有的优先级和访问时间等信息
+                if course.id in self.course_manager._courses_cache:
+                    cached_course = self.course_manager._courses_cache[course.id]
+                    course.priority = cached_course.priority
+                    course.last_accessed = cached_course.last_accessed
+                    course.created_time = cached_course.created_time
+                
+                self.course_manager._courses_cache[course.id] = course
+            
+            # 保存更新后的课程缓存
+            success = self.course_manager.save_courses_cache()
+            if success:
+                logger.info(f"课程数据已保存到 {self.course_manager.courses_file}")
+            else:
+                logger.error("课程数据保存失败")
+            
             return courses
             
         except Exception as e:

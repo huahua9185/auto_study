@@ -139,11 +139,15 @@ class VideoController:
     async def detect_video_player(self) -> bool:
         """检测视频播放器"""
         try:
-            # 尝试JavaScript检测
+            # 尝试JavaScript检测 - 检测video标签
             result = await self.page.evaluate("""
                 () => {
                     const videos = document.querySelectorAll('video');
-                    return videos.length > 0;
+                    if (videos.length > 0) {
+                        console.log('发现video标签:', videos.length);
+                        return true;
+                    }
+                    return false;
                 }
             """)
             if result:
@@ -151,20 +155,123 @@ class VideoController:
         except:
             pass
         
-        # 尝试UI元素检测
+        # 检测iframe嵌入的视频播放器
         try:
-            selectors = ['video', '.video-player', '.player', '#player']
+            result = await self.page.evaluate("""
+                () => {
+                    const iframes = document.querySelectorAll('iframe');
+                    for (let iframe of iframes) {
+                        const src = iframe.src || '';
+                        const id = iframe.id || '';
+                        const className = iframe.className || '';
+                        
+                        if (src.includes('video') || src.includes('player') || src.includes('media') ||
+                            id.includes('video') || id.includes('player') ||
+                            className.includes('video') || className.includes('player')) {
+                            console.log('发现视频iframe:', src);
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+            """)
+            if result:
+                return True
+        except:
+            pass
+        
+        # 尝试UI元素检测 - 扩展选择器列表
+        try:
+            selectors = [
+                'video', 
+                '.video-player', 
+                '.player', 
+                '#player',
+                '.video-container',
+                '.media-player',
+                '.vjs-tech',  # Video.js播放器
+                '.jwplayer',  # JW Player
+                '.dplayer',   # DPlayer
+                '.xgplayer',  # XGPlayer
+                '.aplayer',   # APlayer
+                '[data-player]',
+                '[data-video]',
+                '.video-js',  # Video.js
+                '.plyr',      # Plyr播放器
+                'iframe[src*="video"]',
+                'iframe[src*="player"]',
+                'iframe[src*="media"]'
+            ]
             for selector in selectors:
                 locator = self.page.locator(selector)
                 if await locator.count() > 0:
+                    print(f"发现视频播放器元素: {selector}")
+                    return True
+        except:
+            pass
+        
+        # 检测特殊的播放器容器
+        try:
+            # 检查是否有播放按钮暗示有视频内容
+            play_button_selectors = [
+                'button:has-text("播放")',
+                'button:has-text("开始播放")', 
+                'button[title*="播放"]',
+                'button[title*="Play"]',
+                '.play-btn',
+                '.btn-play',
+                '[class*="play"]',
+                '[id*="play"]'
+            ]
+            
+            for selector in play_button_selectors:
+                locator = self.page.locator(selector)
+                if await locator.count() > 0:
+                    print(f"发现播放按钮，暗示有视频内容: {selector}")
                     return True
         except:
             pass
         
         return False
     
+    async def _handle_play_confirmation_popup(self):
+        """处理播放确认弹窗"""
+        try:
+            # 检查是否有弹窗（简化版本，重复main.py的核心逻辑）
+            popup_selectors = ['.el-dialog', '.el-message-box', '.popup', '.modal', '[role="dialog"]']
+            
+            for selector in popup_selectors:
+                try:
+                    elements = self.page.locator(selector)
+                    if await elements.count() > 0:
+                        element = elements.first
+                        if await element.is_visible():
+                            # 查找确认按钮
+                            confirm_buttons = [
+                                'button:has-text("开始学习")',
+                                'button:has-text("继续学习")', 
+                                'button:has-text("确定")',
+                                '.el-button--primary'
+                            ]
+                            
+                            for btn_selector in confirm_buttons:
+                                button = element.locator(btn_selector)
+                                if await button.count() > 0 and await button.is_visible():
+                                    await button.click()
+                                    print("VideoController: 点击了弹窗确认按钮")
+                                    await asyncio.sleep(1)
+                                    return
+                            break
+                except:
+                    continue
+        except:
+            pass
+    
     async def play(self) -> bool:
         """播放视频"""
+        # 先检查并处理可能的学习确认弹窗
+        await self._handle_play_confirmation_popup()
+        
         # 尝试JavaScript播放
         try:
             result = await self.page.evaluate("""

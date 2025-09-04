@@ -18,8 +18,16 @@ from auto_study.automation.auto_login import AutoLogin
 
 async def simple_debug():
     try:
-        username = os.getenv('AUTO_STUDY_USERNAME')
-        password = os.getenv('AUTO_STUDY_PASSWORD')
+        # 加载环境变量
+        from dotenv import load_dotenv
+        load_dotenv()
+        
+        username = os.getenv('AUTO_STUDY_USERNAME') or os.getenv('USERNAME')
+        password = os.getenv('AUTO_STUDY_PASSWORD') or os.getenv('PASSWORD')
+        
+        if not username or not password:
+            print(f"缺少用户凭据: username={username}, password={'已设置' if password else '未设置'}")
+            return
         
         playwright = await async_playwright().start()
         browser = await playwright.chromium.launch(headless=False)
@@ -53,8 +61,9 @@ async def simple_debug():
             title = await page.title()
             print(f"页面标题: {title}")
             
-            # 等待手动检查
-            input("按回车键继续...")
+            # 等待5秒继续分析
+            print("等待5秒后继续分析...")
+            await asyncio.sleep(5)
         
         await browser.close()
         await playwright.stop()
