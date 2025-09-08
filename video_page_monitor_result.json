@@ -1,0 +1,125 @@
+{
+  "analysis_time": "2025-09-07 22:12:32",
+  "initial_snapshot": {
+    "timestamp": 1757254262529,
+    "url": "https://edu.nxgbjy.org.cn/nxxzxy/index.html#/video_page?id=10828&name=%E5%AD%A6%E5%91%98%E4%B8%AD%E5%BF%83&user_course_id=1988339",
+    "title": "宁夏干部教育培训网络学院",
+    "elementCount": 149,
+    "videos": [],
+    "iframes": [
+      {
+        "index": 0,
+        "src": "https://edu.nxgbjy.org.cn/device/study_new!scorm_play.do?terminal=1&id=1988339",
+        "width": 1200,
+        "height": 573
+      }
+    ],
+    "popups": [],
+    "xpathElements": {
+      "/html/body/div/div[3]/div[2]": {
+        "exists": false
+      },
+      "/html/body/div/div[2]/div[2]": {
+        "exists": true,
+        "visible": true,
+        "tag": "DIV",
+        "class": "video",
+        "text": "习近平总书记关于高质量发展的重要论述及贯彻落实的思路举措30 分钟655 人"
+      },
+      "/html/body/div/div[4]/div[2]": {
+        "exists": false
+      }
+    },
+    "learningButtons": [],
+    "label": "监控开始前",
+    "readable_time": "22:11:02"
+  },
+  "final_snapshot": {
+    "timestamp": 1757254352651,
+    "url": "https://edu.nxgbjy.org.cn/nxxzxy/index.html#/video_page?id=10828&name=%E5%AD%A6%E5%91%98%E4%B8%AD%E5%BF%83&user_course_id=1988339",
+    "title": "宁夏干部教育培训网络学院",
+    "elementCount": 112,
+    "videos": [],
+    "iframes": [
+      {
+        "index": 0,
+        "src": "https://edu.nxgbjy.org.cn/device/study_new!scorm_play.do?terminal=1&id=1988339",
+        "width": 1200,
+        "height": 573
+      }
+    ],
+    "popups": [],
+    "xpathElements": {
+      "/html/body/div/div[3]/div[2]": {
+        "exists": false
+      },
+      "/html/body/div/div[2]/div[2]": {
+        "exists": true,
+        "visible": true,
+        "tag": "DIV",
+        "class": "video",
+        "text": "习近平总书记关于高质量发展的重要论述及贯彻落实的思路举措30 分钟655 人"
+      },
+      "/html/body/div/div[4]/div[2]": {
+        "exists": false
+      }
+    },
+    "learningButtons": [],
+    "label": "监控结束",
+    "readable_time": "22:12:32"
+  },
+  "final_changes": {
+    "element_count_diff": -37,
+    "video_count_diff": 0,
+    "video_state_changes": [],
+    "popup_count_diff": 0,
+    "xpath_changes": {}
+  },
+  "detected_changes": [
+    {
+      "check_number": 3,
+      "time": "22:11:17",
+      "changes": {
+        "element_count_diff": -37,
+        "video_count_diff": 0,
+        "video_state_changes": [],
+        "popup_count_diff": 0,
+        "xpath_changes": {}
+      },
+      "snapshot": {
+        "timestamp": 1757254277549,
+        "url": "https://edu.nxgbjy.org.cn/nxxzxy/index.html#/video_page?id=10828&name=%E5%AD%A6%E5%91%98%E4%B8%AD%E5%BF%83&user_course_id=1988339",
+        "title": "宁夏干部教育培训网络学院",
+        "elementCount": 112,
+        "videos": [],
+        "iframes": [
+          {
+            "index": 0,
+            "src": "https://edu.nxgbjy.org.cn/device/study_new!scorm_play.do?terminal=1&id=1988339",
+            "width": 1200,
+            "height": 573
+          }
+        ],
+        "popups": [],
+        "xpathElements": {
+          "/html/body/div/div[3]/div[2]": {
+            "exists": false
+          },
+          "/html/body/div/div[2]/div[2]": {
+            "exists": true,
+            "visible": true,
+            "tag": "DIV",
+            "class": "video",
+            "text": "习近平总书记关于高质量发展的重要论述及贯彻落实的思路举措30 分钟655 人"
+          },
+          "/html/body/div/div[4]/div[2]": {
+            "exists": false
+          }
+        },
+        "learningButtons": [],
+        "label": "第3次检查",
+        "readable_time": "22:11:17"
+      }
+    }
+  ]
+}

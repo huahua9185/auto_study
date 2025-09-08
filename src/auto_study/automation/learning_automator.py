@@ -234,89 +234,1220 @@ class VideoController:
         
         return False
     
-    async def _handle_play_confirmation_popup(self):
-        """处理播放确认弹窗"""
+    async def _handle_play_confirmation_popup(self, use_xpath=True):
+        """处理播放确认弹窗 - 增强版
+        
+        Args:
+            use_xpath: 是否使用特定的xpath选择器（视频页面用）
+        """
         try:
-            # 检查是否有弹窗（简化版本，重复main.py的核心逻辑）
-            popup_selectors = ['.el-dialog', '.el-message-box', '.popup', '.modal', '[role="dialog"]']
+            logger.info("VideoController: 检查播放确认弹窗...")
+            
+            # 等待弹窗加载
+            await asyncio.sleep(2)
+            
+            # 更全面的弹窗选择器
+            popup_selectors = [
+                # Element UI 弹窗
+                '.el-dialog:not([style*="display: none"])',  
+                '.el-message-box__wrapper:not([style*="display: none"])',
+                '.el-popup:not([style*="display: none"])',
+                
+                # 通用弹窗
+                '.modal:not(.fade):not([style*="display: none"])',
+                '.popup:not([style*="display: none"])',
+                '.dialog:not([style*="display: none"])',
+                '[role="dialog"]:not([style*="display: none"])',
+                
+                # 自定义弹窗
+                '.play-dialog',
+                '.video-dialog',
+                '.confirm-dialog'
+            ]
             
             for selector in popup_selectors:
                 try:
                     elements = self.page.locator(selector)
-                    if await elements.count() > 0:
-                        element = elements.first
+                    count = await elements.count()
+                    
+                    for i in range(count):
+                        element = elements.nth(i)
                         if await element.is_visible():
-                            # 查找确认按钮
-                            confirm_buttons = [
-                                'button:has-text("开始学习")',
-                                'button:has-text("继续学习")', 
-                                'button:has-text("确定")',
-                                '.el-button--primary'
-                            ]
-                            
-                            for btn_selector in confirm_buttons:
-                                button = element.locator(btn_selector)
-                                if await button.count() > 0 and await button.is_visible():
-                                    await button.click()
-                                    print("VideoController: 点击了弹窗确认按钮")
-                                    await asyncio.sleep(1)
-                                    return
-                            break
-                except:
+                            # 检查是否包含播放/学习相关内容
+                            popup_text = await element.text_content()
+                            if popup_text and any(keyword in popup_text for keyword in 
+                                ['播放', '学习', '开始', '继续', '视频', '确认']):
+                                
+                                logger.info(f"VideoController: 发现播放相关弹窗: {selector}")
+                                
+                                # 查找确认按钮（包括div元素）
+                                confirm_buttons = [
+                                    # 最高优先级：基于监控发现的实际 xpath
+                                    'xpath=/html/body/div/div[2]/div[2]',  # 实际存在的视频页面元素
+                                    'xpath=/html/body/div/div[3]/div[2]',  # 原始用户提供的xpath（备用）
+                                    
+                                    # 基于实际分析："btn" 类名的 DIV 按钮
+                                    'div.btn:has-text("继续学习")',
+                                    'div.btn:has-text("开始学习")',
+                                    'div.btn',  # 通用 btn 类
+                                    
+                                    # user_choise 类（之前已见过）
+                                    '.user_choise:has-text("继续学习")',
+                                    '.user_choise:has-text("开始学习")',
+                                    'div.user_choise',
+                                    
+                                    # 标准 HTML button 元素
+                                    'button:has-text("继续学习")',
+                                    'button:has-text("开始学习")',
+                                    'button:has-text("开始播放")',
+                                    'button:has-text("确定")',
+                                    'button:has-text("确认")',
+                                    
+                                    # 具有点击事件的 DIV
+                                    'div[onclick]:has-text("继续学习")',
+                                    'div[onclick]:has-text("开始学习")',
+                                    
+                                    # Element UI 按钮类
+                                    '.el-button:has-text("继续学习")',
+                                    '.el-button:has-text("开始学习")',
+                                    '.el-button--primary:visible',
+                                    
+                                    # 其他可能的按钮类
+                                    '.btn-primary:visible',
+                                    '.confirm-btn:visible'
+                                ]
+                                
+                                for btn_selector in confirm_buttons:
+                                    try:
+                                        # 特殊处理xpath选择器
+                                        if btn_selector.startswith('xpath='):
+                                            xpath = btn_selector[6:]  # 去除'xpath='前缀
+                                            logger.info(f"VideoController: 尝试xpath选择器: {xpath}")
+                                            
+                                            # 检查xpath元素是否存在
+                                            xpath_exists = await self.page.evaluate(f"""
+                                                (xpath) => {{
+                                                    const result = document.evaluate(
+                                                        xpath, document, null, 
+                                                        XPathResult.FIRST_ORDERED_NODE_TYPE, null
+                                                    );
+                                                    const element = result.singleNodeValue;
+                                                    if (element) {{
+                                                        const rect = element.getBoundingClientRect();
+                                                        return {{
+                                                            exists: true,
+                                                            visible: rect.width > 0 && rect.height > 0,
+                                                            text: element.textContent || '',
+                                                            tagName: element.tagName
+                                                        }};
+                                                    }}
+                                                    return {{ exists: false }};
+                                                }}
+                                            """, xpath)
+                                            
+                                            if xpath_exists['exists'] and xpath_exists['visible']:
+                                                logger.info(f"VideoController: 找到xpath元素: {xpath_exists['tagName']} - '{xpath_exists['text'][:50]}'")
+                                                
+                                                # 记录点击前的URL
+                                                current_url = self.page.url
+                                                
+                                                # 使用JavaScript直接点击xpath元素
+                                                clicked = await self.page.evaluate(f"""
+                                                    (xpath) => {{
+                                                        const result = document.evaluate(
+                                                            xpath, document, null,
+                                                            XPathResult.FIRST_ORDERED_NODE_TYPE, null
+                                                        );
+                                                        const element = result.singleNodeValue;
+                                                        if (element) {{
+                                                            element.click();
+                                                            return true;
+                                                        }}
+                                                        return false;
+                                                    }}
+                                                """, xpath)
+                                                
+                                                if clicked:
+                                                    logger.info(f"VideoController: 成功点击xpath元素: {xpath}")
+                                                    await asyncio.sleep(3)
+                                                    
+                                                    # 检查是否跳转到了新页面
+                                                    new_url = self.page.url
+                                                    if new_url != current_url:
+                                                        logger.info(f"VideoController: 页面跳转成功: {new_url}")
+                                                        return
+                                                    else:
+                                                        logger.info(f"VideoController: xpath点击成功，但页面未跳转")
+                                                        # 对于视频页面弹窗，点击后可能不会跳转页面，只是关闭弹窗
+                                                        return  # 这里直接返回，认为处理成功
+                                                else:
+                                                    logger.warning(f"VideoController: xpath点击失败")
+                                            else:
+                                                logger.info(f"VideoController: xpath元素不存在或不可见: {xpath}")
+                                            
+                                            continue
+                                        
+                                        # 常规选择器处理
+                                        buttons = element.locator(btn_selector)
+                                        button_count = await buttons.count()
+                                        
+                                        for j in range(button_count):
+                                            button = buttons.nth(j)
+                                            if await button.is_visible():
+                                                button_text = await button.text_content()
+                                                logger.info(f"VideoController: 点击确认按钮: {button_text}")
+                                                
+                                                # 记录点击前的URL
+                                                current_url = self.page.url
+                                                
+                                                await button.click()
+                                                await asyncio.sleep(3)
+                                                
+                                                # 检查是否跳转到了新页面
+                                                new_url = self.page.url
+                                                if new_url != current_url:
+                                                    logger.info(f"VideoController: 页面跳转成功: {new_url}")
+                                                    return
+                                                else:
+                                                    logger.info(f"VideoController: 页面未跳转，继续尝试下一个按钮")
+                                                    continue
+                                    except Exception as e:
+                                        logger.debug(f"VideoController: 选择器 {btn_selector} 失败: {e}")
+                                        continue
+                                break
+                except Exception as e:
+                    logger.debug(f"VideoController: 检查弹窗失败 {selector}: {e}")
                     continue
-        except:
-            pass
+        except Exception as e:
+            logger.error(f"VideoController: 处理播放确认弹窗失败: {e}")
     
-    async def play(self) -> bool:
-        """播放视频"""
-        # 先检查并处理可能的学习确认弹窗
-        await self._handle_play_confirmation_popup()
-        
-        # 尝试JavaScript播放
+    async def _handle_login_popup(self) -> bool:
+        """处理登录弹窗 - 基于网站实际结构"""
         try:
-            result = await self.page.evaluate("""
+            logger.info("检查登录弹窗...")
+            
+            # 根据页面结构分析，登录弹窗使用 Element UI 的 el-dialog
+            login_selectors = [
+                '.el-dialog.el-dialog--center',  # Element UI 对话框
+                '.el-dialog',  # 通用 Element UI 对话框
+                '[role="dialog"]',  # 标准对话框角色
+            ]
+            
+            for selector in login_selectors:
+                dialogs = await self.page.locator(selector).count()
+                if dialogs > 0:
+                    logger.info(f"找到 {dialogs} 个对话框: {selector}")
+                    
+                    # 检查是否为登录弹窗（包含用户名、密码输入框）
+                    dialog = self.page.locator(selector).first
+                    
+                    # 查找输入框
+                    username_inputs = await dialog.locator('input[placeholder*="用户"], input[placeholder*="账号"], input[type="text"]').count()
+                    password_inputs = await dialog.locator('input[type="password"], input[placeholder*="密码"]').count()
+                    
+                    if username_inputs > 0 and password_inputs > 0:
+                        logger.info("确认为登录弹窗，直接在弹窗中登录...")
+                        
+                        # 直接在弹窗中填写表单
+                        success = await self._fill_popup_login_form(
+                            dialog,
+                            username="640302198607120020",
+                            password="My2062660"
+                        )
+                        
+                        if success:
+                            logger.info("✅ 登录弹窗处理成功")
+                            await asyncio.sleep(2)  # 等待登录完成
+                            return True
+                        else:
+                            logger.error("❌ 登录弹窗处理失败")
+                            return False
+            
+            logger.info("未检测到登录弹窗")
+            return True  # 没有弹窗也算成功
+            
+        except Exception as e:
+            logger.error(f"VideoController: 处理登录弹窗失败: {e}")
+            return False
+    
+    async def _fill_popup_login_form(self, dialog, username: str, password: str) -> bool:
+        """在弹窗中填写登录表单"""
+        try:
+            logger.info("在弹窗中填写登录表单...")
+            
+            # 等待弹窗完全显示（非常重要！）
+            logger.info("等待弹窗完全显示...")
+            await asyncio.sleep(3)
+            
+            # 等待输入框可见
+            try:
+                await dialog.locator('input[placeholder*="用户"]').wait_for(state='visible', timeout=10000)
+                logger.info("✅ 输入框已可见")
+            except Exception as e:
+                logger.warning(f"等待输入框可见超时: {e}")
+            
+            # 1. 填写用户名
+            username_selectors = [
+                'input[placeholder*="用户"]',
+                'input[placeholder*="账号"]', 
+                'input[type="text"]'
+            ]
+            
+            username_filled = False
+            for selector in username_selectors:
+                username_input = dialog.locator(selector)
+                if await username_input.count() > 0 and await username_input.first.is_visible():
+                    await username_input.first.clear()
+                    await username_input.first.fill(username)
+                    logger.info(f"✅ 填写用户名: {username}")
+                    username_filled = True
+                    break
+            
+            if not username_filled:
+                logger.error("❌ 未找到用户名输入框")
+                return False
+            
+            # 2. 填写密码
+            password_selectors = [
+                'input[type="password"]',
+                'input[placeholder*="密码"]'
+            ]
+            
+            password_filled = False
+            for selector in password_selectors:
+                password_input = dialog.locator(selector)
+                if await password_input.count() > 0 and await password_input.first.is_visible():
+                    await password_input.first.clear()
+                    await password_input.first.fill(password)
+                    logger.info(f"✅ 填写密码: {'*' * len(password)}")
+                    password_filled = True
+                    break
+            
+            if not password_filled:
+                logger.error("❌ 未找到密码输入框")
+                return False
+            
+            # 3. 处理验证码（如果有）
+            captcha_img = dialog.locator('img[src*="captcha"], img[src*="code"], .captcha img')
+            if await captcha_img.count() > 0:
+                logger.info("检测到验证码，进行识别...")
+                
+                # 使用 OCR 识别验证码
+                from ..utils.ocr_recognizer import OCRRecognizer
+                ocr = OCRRecognizer()
+                
+                captcha_result = await ocr.recognize_captcha_from_element(captcha_img.first)
+                if captcha_result['success']:
+                    captcha_code = captcha_result['code']
+                    logger.info(f"验证码识别结果: {captcha_code}")
+                    
+                    # 填写验证码
+                    captcha_input = dialog.locator('input[placeholder*="验证"], input[placeholder*="代码"]')
+                    if await captcha_input.count() > 0:
+                        await captcha_input.first.fill(captcha_code)
+                        logger.info("✅ 填写验证码")
+                    else:
+                        logger.warning("未找到验证码输入框")
+                else:
+                    logger.warning("验证码识别失败")
+            
+            # 4. 点击登录按钮
+            login_button_selectors = [
+                'button:has-text("登录")',
+                'button:has-text("登陆")',
+                'button:has-text("确定")',
+                '.el-button--primary',
+                'button[type="submit"]',
+                '.login-btn'
+            ]
+            
+            login_clicked = False
+            for selector in login_button_selectors:
+                login_button = dialog.locator(selector)
+                if await login_button.count() > 0 and await login_button.first.is_visible():
+                    await login_button.first.click()
+                    logger.info(f"✅ 点击登录按钮: {selector}")
+                    login_clicked = True
+                    break
+            
+            if not login_clicked:
+                logger.error("❌ 未找到登录按钮")
+                return False
+            
+            # 5. 等待登录结果
+            await asyncio.sleep(3)
+            
+            # 检查登录是否成功（弹窗是否关闭）
+            dialog_visible = await dialog.is_visible()
+            if not dialog_visible:
+                logger.info("✅ 登录弹窗已关闭，登录成功")
+                return True
+            else:
+                # 检查是否有错误信息
+                error_selectors = ['.error', '.el-message--error', '[class*="error"]']
+                for error_sel in error_selectors:
+                    error_elements = dialog.locator(error_sel)
+                    if await error_elements.count() > 0:
+                        error_text = await error_elements.first.text_content()
+                        logger.error(f"登录错误: {error_text}")
+                        return False
+                
+                logger.warning("登录弹窗仍然可见，可能登录失败")
+                return False
+                
+        except Exception as e:
+            logger.error(f"VideoController: 填写弹窗登录表单失败: {e}")
+            return False
+    
+    async def _find_and_start_video(self) -> bool:
+        """查找并启动视频播放器"""
+        try:
+            logger.info("开始查找视频播放器...")
+            
+            # 等待页面完全加载
+            await asyncio.sleep(2)
+            
+            # 查找视频元素的多种方式
+            video_info = await self.page.evaluate("""
                 () => {
+                    const result = {
+                        videos: [],
+                        iframes: [],
+                        players: [],
+                        clickableElements: []
+                    };
+                    
+                    // 1. 查找 HTML5 video 标签
                     const videos = document.querySelectorAll('video');
-                    if (videos.length > 0) {
-                        videos[0].play();
-                        return true;
-                    }
-                    return false;
+                    videos.forEach((video, index) => {
+                        result.videos.push({
+                            index: index,
+                            src: video.src || video.currentSrc,
+                            id: video.id,
+                            class: video.className,
+                            paused: video.paused,
+                            readyState: video.readyState,
+                            visible: video.offsetWidth > 0 && video.offsetHeight > 0
+                        });
+                    });
+                    
+                    // 2. 查找 iframe（可能包含视频）
+                    const iframes = document.querySelectorAll('iframe');
+                    iframes.forEach((iframe, index) => {
+                        const style = window.getComputedStyle(iframe);
+                        result.iframes.push({
+                            index: index,
+                            src: iframe.src,
+                            id: iframe.id,
+                            class: iframe.className,
+                            visible: style.display !== 'none' && iframe.offsetWidth > 0
+                        });
+                    });
+                    
+                    // 3. 查找常见的视频播放器容器
+                    const playerSelectors = [
+                        '.video-player', '.player', '[class*="video"]', 
+                        '.prism-player', '.dplayer', '.vjs-player',
+                        '[id*="player"]', '[class*="play"]'
+                    ];
+                    
+                    playerSelectors.forEach(selector => {
+                        const elements = document.querySelectorAll(selector);
+                        elements.forEach(el => {
+                            const style = window.getComputedStyle(el);
+                            if (style.display !== 'none' && el.offsetWidth > 0) {
+                                result.players.push({
+                                    selector: selector,
+                                    class: el.className,
+                                    id: el.id,
+                                    hasVideo: el.querySelector('video') !== null,
+                                    hasIframe: el.querySelector('iframe') !== null
+                                });
+                            }
+                        });
+                    });
+                    
+                    // 4. 查找可能的播放按钮
+                    const playSelectors = [
+                        'button[class*="play"]', '.play-btn', '[title*="播放"]',
+                        '[class*="start"]', '.btn-play', 'div[onclick*="play"]'
+                    ];
+                    
+                    playSelectors.forEach(selector => {
+                        const elements = document.querySelectorAll(selector);
+                        elements.forEach(el => {
+                            const style = window.getComputedStyle(el);
+                            if (style.display !== 'none' && el.offsetWidth > 0) {
+                                result.clickableElements.push({
+                                    selector: selector,
+                                    text: el.textContent?.trim() || '',
+                                    class: el.className,
+                                    tag: el.tagName
+                                });
+                            }
+                        });
+                    });
+                    
+                    return result;
                 }
             """)
-            if result:
-                # 验证播放状态
-                await asyncio.sleep(0.5)
-                is_playing = await self.is_playing()
-                if is_playing:
+            
+            logger.info(f"视频元素数量: {len(video_info['videos'])}")
+            logger.info(f"iframe数量: {len(video_info['iframes'])}")
+            logger.info(f"播放器容器数量: {len(video_info['players'])}")
+            logger.info(f"播放按钮数量: {len(video_info['clickableElements'])}")
+            
+            # 优先尝试HTML5视频
+            if video_info['videos']:
+                for i, video in enumerate(video_info['videos']):
+                    if video['visible'] and video['readyState'] >= 2:  # HAVE_CURRENT_DATA
+                        logger.info(f"尝试播放第{i}个视频: {video}")
+                        
+                        success = await self.page.evaluate(f"""
+                            () => {{
+                                const video = document.querySelectorAll('video')[{i}];
+                                if (video && video.paused) {{
+                                    video.play().then(() => {{
+                                        console.log('视频开始播放');
+                                    }}).catch(e => {{
+                                        console.error('视频播放失败:', e);
+                                    }});
+                                    return true;
+                                }}
+                                return false;
+                            }}
+                        """)
+                        
+                        if success:
+                            logger.info(f"✅ 成功启动第{i}个视频")
+                            return True
+            
+            # 如果没有直接的视频，尝试点击播放按钮
+            if video_info['clickableElements']:
+                for element in video_info['clickableElements']:
+                    if any(keyword in element['text'].lower() for keyword in ['播放', 'play', '开始']):
+                        logger.info(f"尝试点击播放按钮: {element}")
+                        
+                        clicked = await self.page.evaluate(f"""
+                            () => {{
+                                const elements = document.querySelectorAll('{element['selector']}');
+                                for (let el of elements) {{
+                                    if (el.textContent && el.textContent.includes('{element['text'][:10]}')) {{
+                                        el.click();
+                                        return true;
+                                    }}
+                                }}
+                                return false;
+                            }}
+                        """)
+                        
+                        if clicked:
+                            logger.info("✅ 成功点击播放按钮")
+                            await asyncio.sleep(2)  # 等待视频加载
+                            return True
+            
+            # 如果没有直接的视频，检查iframe
+            if video_info['iframes']:
+                logger.info("🖼️  检测到iframe，尝试处理iframe内的视频...")
+                iframe_success = await self._handle_iframe_video(video_info['iframes'])
+                if iframe_success:
                     return True
-        except:
-            pass
+            
+            # 如果没有直接的视频，检查是否需要点击更多按钮
+            logger.warning("未找到直接的视频元素")
+            
+            # 检查当前页面是否还在课程列表页
+            current_url = self.page.url
+            logger.info(f"当前页面: {current_url}")
+            
+            if 'tool_box/required' in current_url:
+                logger.info("仍在课程列表页，尝试点击其他学习按钮...")
+                
+                # 查找并点击其他的继续学习按钮
+                more_clicked = await self.page.evaluate("""
+                    () => {
+                        const buttons = document.querySelectorAll('div.btn');
+                        for (let i = 0; i < Math.min(buttons.length, 5); i++) {
+                            const btn = buttons[i];
+                            const text = btn.textContent || '';
+                            if (text.includes('继续学习') || text.includes('开始学习')) {
+                                // 检查这个按钮是否在视窗内
+                                const rect = btn.getBoundingClientRect();
+                                if (rect.width > 0 && rect.height > 0) {
+                                    btn.click();
+                                    return {
+                                        clicked: true,
+                                        index: i,
+                                        text: text.trim()
+                                    };
+                                }
+                            }
+                        }
+                        return { clicked: false };
+                    }
+                """)
+                
+                if more_clicked['clicked']:
+                    logger.info(f"点击了第{more_clicked['index']+1}个按钮: {more_clicked['text']}")
+                    await asyncio.sleep(5)  # 等待页面可能的跳转
+                    
+                    # 检查是否跳转了
+                    new_url = self.page.url
+                    if new_url != current_url:
+                        logger.info(f"✅ 成功跳转到新页面: {new_url}")
+                        
+                        # 再次查找视频元素
+                        await asyncio.sleep(3)
+                        new_video_info = await self.page.evaluate("""
+                            () => {
+                                const videos = document.querySelectorAll('video');
+                                return {
+                                    count: videos.length,
+                                    videos: Array.from(videos).map((v, i) => ({
+                                        index: i,
+                                        src: v.src || v.currentSrc,
+                                        visible: v.offsetWidth > 0 && v.offsetHeight > 0,
+                                        readyState: v.readyState
+                                    }))
+                                };
+                            }
+                        """)
+                        
+                        logger.info(f"新页面视频数量: {new_video_info['count']}")
+                        if new_video_info['videos']:
+                            logger.info(f"视频详情: {new_video_info['videos']}")
+                            
+                            # 尝试播放第一个可见的视频
+                            for video in new_video_info['videos']:
+                                if video['visible'] and video['readyState'] >= 2:
+                                    success = await self.page.evaluate(f"""
+                                        () => {{
+                                            const video = document.querySelectorAll('video')[{video['index']}];
+                                            if (video && video.paused) {{
+                                                video.play();
+                                                return true;
+                                            }}
+                                            return false;
+                                        }}
+                                    """)
+                                    
+                                    if success:
+                                        logger.info(f"✅ 成功在新页面播放视频")
+                                        return True
+            
+            logger.warning("最终未找到可用的视频播放器")
+            logger.info(f"详细信息 - 视频: {video_info['videos']}")
+            logger.info(f"详细信息 - iframe: {video_info['iframes']}")
+            return False
+            
+        except Exception as e:
+            logger.error(f"VideoController: 查找视频播放器失败: {e}")
+            return False
+    
+    async def _handle_iframe_video(self, iframes_info) -> bool:
+        """处理iframe内的视频播放器
         
-        # 尝试UI按钮点击
+        基于用户提供的信息：iframe包含真正的视频播放器
+        "继续学习"弹窗可能出现在iframe内部
+        """
         try:
-            play_selectors = ['.play-button', '.btn-play', 'button[title*="播放"]', 'button[title*="Play"]']
-            for selector in play_selectors:
-                locator = self.page.locator(selector)
-                if await locator.count() > 0:
-                    await locator.click()
-                    await asyncio.sleep(0.5)
-                    is_playing = await self.is_playing()
-                    if is_playing:
+            logger.info(f"🎬 开始处理 {len(iframes_info)} 个iframe...")
+            
+            for i, iframe_data in enumerate(iframes_info):
+                logger.info(f"🖼️  处理iframe {i+1}: {iframe_data['src']}")
+                
+                # 优先处理包含scorm_play.do的iframe（视频播放器）
+                if 'scorm_play.do' in iframe_data['src'] or 'player' in iframe_data.get('class', ''):
+                    logger.info("🎯 发现视频播放器iframe")
+                    
+                    # 方法1：尝试通过JavaScript访问iframe内容
+                    js_success = await self._handle_iframe_via_javascript(i, iframe_data)
+                    if js_success:
                         return True
-        except:
-            pass
-        
-        # 尝试键盘快捷键
+                    
+                    # 方法2：尝试通过Playwright frame locator
+                    frame_success = await self._handle_iframe_via_frame_locator(i, iframe_data)
+                    if frame_success:
+                        return True
+                    
+                    # 方法3：等待iframe加载后再次尝试
+                    logger.info("⏳ 等待iframe完全加载后重试...")
+                    await asyncio.sleep(5)
+                    retry_success = await self._handle_iframe_via_javascript(i, iframe_data)
+                    if retry_success:
+                        return True
+            
+            logger.warning("❌ 所有iframe处理方法都失败了")
+            return False
+            
+        except Exception as e:
+            logger.error(f"❌ 处理iframe视频时异常: {e}")
+            return False
+    
+    async def _handle_iframe_via_javascript(self, iframe_index, iframe_data) -> bool:
+        """通过JavaScript处理iframe"""
         try:
-            await self.page.keyboard.press('Space')
-            await asyncio.sleep(0.5)
-            is_playing = await self.is_playing()
-            return is_playing
-        except:
-            pass
+            logger.info(f"🔧 使用JavaScript方法处理iframe {iframe_index+1}...")
+            
+            result = await self.page.evaluate(f"""
+                (index) => {{
+                    const iframe = document.querySelectorAll('iframe')[index];
+                    if (!iframe) return {{ success: false, error: 'iframe不存在' }};
+                    
+                    try {{
+                        // 尝试访问iframe的document
+                        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                        if (!iframeDoc) {{
+                            return {{ success: false, error: '无法访问iframe内容(跨域)', crossOrigin: true }};
+                        }}
+                        
+                        // 查找iframe内的视频
+                        const videos = iframeDoc.querySelectorAll('video');
+                        if (videos.length > 0) {{
+                            let videoStarted = false;
+                            for (let video of videos) {{
+                                if (video.paused) {{
+                                    try {{
+                                        video.play();
+                                        videoStarted = true;
+                                        break;
+                                    }} catch (e) {{
+                                        console.log('视频播放失败:', e);
+                                    }}
+                                }}
+                            }}
+                            
+                            if (videoStarted) {{
+                                return {{
+                                    success: true,
+                                    method: 'direct_video_play',
+                                    videoCount: videos.length
+                                }};
+                            }}
+                        }}
+                        
+                        // 查找iframe内的播放按钮
+                        const playButtons = [
+                            ...iframeDoc.querySelectorAll('button'),
+                            ...iframeDoc.querySelectorAll('div[onclick]'),
+                            ...iframeDoc.querySelectorAll('.btn'),
+                            ...iframeDoc.querySelectorAll('[class*="play"]'),
+                            ...iframeDoc.querySelectorAll('[class*="start"]')
+                        ];
+                        
+                        const learningButtons = [];
+                        playButtons.forEach((btn, i) => {{
+                            const text = btn.textContent || '';
+                            if (text.includes('继续学习') || text.includes('开始学习') || 
+                                text.includes('播放') || text.includes('play') || 
+                                text.includes('开始') || text.includes('start')) {{
+                                learningButtons.push({{
+                                    index: i,
+                                    text: text.trim(),
+                                    tagName: btn.tagName,
+                                    className: btn.className
+                                }});
+                            }}
+                        }});
+                        
+                        // 尝试点击找到的按钮
+                        if (learningButtons.length > 0) {{
+                            const firstBtn = playButtons[learningButtons[0].index];
+                            if (firstBtn) {{
+                                firstBtn.click();
+                                return {{
+                                    success: true,
+                                    method: 'button_click',
+                                    clicked: learningButtons[0],
+                                    totalButtons: playButtons.length,
+                                    learningButtons: learningButtons.length
+                                }};
+                            }}
+                        }}
+                        
+                        return {{
+                            success: false,
+                            error: '未找到可操作的元素',
+                            totalButtons: playButtons.length,
+                            videos: videos.length
+                        }};
+                        
+                    }} catch (e) {{
+                        return {{ success: false, error: `JavaScript错误: ${{e.message}}` }};
+                    }}
+                }}
+            """, iframe_index)
+            
+            if result['success']:
+                logger.info(f"✅ JavaScript方法成功!")
+                logger.info(f"   方法: {result['method']}")
+                
+                if result['method'] == 'direct_video_play':
+                    logger.info(f"   直接播放iframe内的 {result['videoCount']} 个视频")
+                elif result['method'] == 'button_click':
+                    logger.info(f"   点击了按钮: {result['clicked']['text']}")
+                    logger.info(f"   iframe内总按钮: {result['totalButtons']}个, 学习相关: {result['learningButtons']}个")
+                
+                # 等待操作生效
+                await asyncio.sleep(3)
+                return True
+                
+            else:
+                error_msg = result['error']
+                logger.warning(f"⚠️  JavaScript方法失败: {error_msg}")
+                
+                if result.get('crossOrigin'):
+                    logger.info("💡 这是跨域iframe，需要使用其他方法")
+                elif 'totalButtons' in result or 'videos' in result:
+                    logger.info(f"   iframe内按钮: {result.get('totalButtons', 0)}个, 视频: {result.get('videos', 0)}个")
+                
+                return False
+                
+        except Exception as e:
+            logger.error(f"❌ JavaScript处理iframe时异常: {e}")
+            return False
+    
+    async def _handle_iframe_via_frame_locator(self, iframe_index, iframe_data) -> bool:
+        """通过Playwright frame locator处理iframe"""
+        try:
+            logger.info(f"🎭 使用Playwright frame locator处理iframe {iframe_index+1}...")
+            
+            # 尝试获取iframe句柄
+            iframe_selector = f"iframe:nth-child({iframe_index + 1})"
+            
+            # 等待iframe加载
+            await asyncio.sleep(2)
+            
+            try:
+                # 使用frame locator
+                frame = self.page.frame_locator(iframe_selector)
+                
+                # 检查iframe内的视频
+                video_count = await frame.locator('video').count()
+                if video_count > 0:
+                    logger.info(f"🎬 iframe内发现 {video_count} 个视频元素")
+                    
+                    for i in range(video_count):
+                        video = frame.locator('video').nth(i)
+                        if await video.is_visible():
+                            logger.info(f"🖱️  尝试播放第 {i+1} 个视频")
+                            
+                            # 直接尝试点击视频元素
+                            await video.click()
+                            await asyncio.sleep(2)
+                            return True
+                
+                # 查找iframe内的播放按钮
+                button_selectors = [
+                    'button:has-text("继续学习")',
+                    'button:has-text("开始学习")', 
+                    'button:has-text("播放")',
+                    'div:has-text("继续学习")',
+                    'div:has-text("开始学习")',
+                    'div:has-text("播放")',
+                    '.play-btn',
+                    '.continue-btn',
+                    '[class*="play"]',
+                    '[onclick*="play"]'
+                ]
+                
+                for selector in button_selectors:
+                    try:
+                        elements = frame.locator(selector)
+                        count = await elements.count()
+                        
+                        if count > 0:
+                            logger.info(f"✅ iframe内找到 {count} 个 '{selector}' 元素")
+                            
+                            for i in range(count):
+                                element = elements.nth(i)
+                                if await element.is_visible():
+                                    logger.info(f"🖱️  点击 '{selector}' 元素 {i+1}")
+                                    await element.click()
+                                    await asyncio.sleep(3)
+                                    return True
+                                    
+                    except Exception as e:
+                        logger.debug(f"尝试 '{selector}' 时出错: {e}")
+                        continue
+                
+                logger.warning("⚠️  frame locator未找到可操作的元素")
+                return False
+                
+            except Exception as e:
+                logger.warning(f"⚠️  frame locator失败: {e}")
+                return False
+                
+        except Exception as e:
+            logger.error(f"❌ Playwright frame locator处理异常: {e}")
+            return False
+    
+    async def play(self) -> bool:
+        """播放视频 - 基于网站实际结构的针对性实现
         
-        return False
+        关键发现：点击"继续学习"按钮会在新tab中打开视频页面
+        """
+        try:
+            logger.info("开始针对性视频播放逻辑")
+            
+            # 获取浏览器上下文和初始页面数
+            context = self.page.context
+            initial_page_count = len(context.pages)
+            logger.info(f"初始页面数: {initial_page_count}")
+            
+            # 第一步：点击"继续学习"按钮（会在新tab中打开视频页面）
+            logger.info("1. 点击'继续学习'按钮（会在新tab中打开）...")
+            new_tab_opened = await self._click_continue_learning_for_new_tab()
+            
+            if not new_tab_opened:
+                logger.error("❌ 未能打开新tab")
+                return False
+            
+            # 第二步：等待并切换到新的视频tab
+            logger.info("2. 等待新tab打开并切换...")
+            video_page = await self._wait_for_new_tab(context, initial_page_count)
+            
+            if not video_page:
+                logger.error("❌ 未能获取到新的视频页面")
+                return False
+            
+            logger.info(f"✅ 成功切换到视频页面: {video_page.url}")
+            
+            # 第三步：在新的视频页面中处理iframe和播放器
+            logger.info("3. 处理视频页面中的iframe播放器...")
+            video_started = await self._handle_video_page_iframe(video_page)
+            
+            if video_started:
+                logger.info("✅ 视频播放逻辑执行成功")
+                return True
+            else:
+                logger.warning("❌ iframe视频处理失败")
+                return False
+                
+        except Exception as e:
+            logger.error(f"VideoController: 播放视频失败: {e}")
+            return False
+    
+    async def _click_continue_learning_for_new_tab(self) -> bool:
+        """点击继续学习按钮，准备在新tab中打开视频页面"""
+        try:
+            logger.info("🎯 查找并点击'继续学习'按钮...")
+            
+            clicked = await self.page.evaluate("""
+                () => {
+                    const buttons = document.querySelectorAll('div.btn');
+                    for (let btn of buttons) {
+                        const text = btn.textContent || '';
+                        if (text.includes('继续学习') || text.includes('开始学习')) {
+                            // 滚动到按钮位置确保可见
+                            btn.scrollIntoView({behavior: 'smooth', block: 'center'});
+                            btn.click();
+                            return {
+                                success: true,
+                                text: text.trim()
+                            };
+                        }
+                    }
+                    return { success: false };
+                }
+            """)
+            
+            if clicked['success']:
+                logger.info(f"✅ 成功点击按钮: {clicked['text']}")
+                return True
+            else:
+                logger.error("❌ 未找到'继续学习'按钮")
+                return False
+                
+        except Exception as e:
+            logger.error(f"❌ 点击按钮时异常: {e}")
+            return False
+    
+    async def _wait_for_new_tab(self, context, initial_count, timeout=10):
+        """等待新tab打开并返回视频页面"""
+        try:
+            logger.info("⏳ 等待新tab打开...")
+            
+            for i in range(timeout):
+                await asyncio.sleep(1)
+                current_count = len(context.pages)
+                
+                if current_count > initial_count:
+                    logger.info(f"🎉 检测到新tab打开! (页面数: {initial_count} -> {current_count})")
+                    
+                    # 获取最新的页面
+                    video_page = context.pages[-1]
+                    
+                    # 等待新页面加载
+                    logger.info("⏳ 等待新页面完全加载...")
+                    await video_page.wait_for_load_state('networkidle', timeout=15000)
+                    await asyncio.sleep(3)
+                    
+                    logger.info(f"📍 视频页面URL: {video_page.url}")
+                    logger.info(f"📄 视频页面标题: {await video_page.title()}")
+                    
+                    # 验证是否为视频页面
+                    if 'video_page' in video_page.url:
+                        return video_page
+                    else:
+                        logger.warning(f"⚠️  新页面可能不是视频页面: {video_page.url}")
+                        return video_page  # 仍然返回，但记录警告
+                
+                elif i % 3 == 0:
+                    logger.info(f"⏱️  等待新tab... ({timeout-i}秒剩余)")
+            
+            logger.error(f"❌ {timeout}秒内未检测到新tab打开")
+            return None
+            
+        except Exception as e:
+            logger.error(f"❌ 等待新tab时异常: {e}")
+            return None
+    
+    async def _handle_video_page_iframe(self, video_page) -> bool:
+        """处理视频页面中的iframe播放器"""
+        try:
+            logger.info("🎬 开始处理视频页面中的iframe...")
+            
+            # 分析页面中的iframe
+            iframe_analysis = await video_page.evaluate("""
+                () => {
+                    const iframes = document.querySelectorAll('iframe');
+                    const result = [];
+                    
+                    iframes.forEach((iframe, index) => {
+                        const rect = iframe.getBoundingClientRect();
+                        result.push({
+                            index: index,
+                            src: iframe.src || iframe.getAttribute('src') || '',
+                            class: iframe.className || '',
+                            width: rect.width,
+                            height: rect.height,
+                            visible: rect.width > 0 && rect.height > 0
+                        });
+                    });
+                    
+                    return result;
+                }
+            """)
+            
+            logger.info(f"🖼️  发现 {len(iframe_analysis)} 个iframe")
+            
+            if not iframe_analysis:
+                logger.warning("❌ 视频页面中未发现iframe")
+                return False
+            
+            # 处理每个iframe
+            for iframe_info in iframe_analysis:
+                logger.info(f"\n🎯 处理iframe: {iframe_info['src']}")
+                logger.info(f"   大小: {iframe_info['width']}x{iframe_info['height']}")
+                logger.info(f"   可见: {iframe_info['visible']}")
+                
+                # 优先处理视频播放器iframe
+                if 'scorm_play.do' in iframe_info['src'] or 'player' in iframe_info['class']:
+                    logger.info("✅ 发现视频播放器iframe")
+                    
+                    # 尝试处理iframe内容
+                    success = await self._process_iframe_video(video_page, iframe_info['index'])
+                    if success:
+                        return True
+            
+            logger.warning("❌ 所有iframe处理都失败了")
+            return False
+            
+        except Exception as e:
+            logger.error(f"❌ 处理视频页面iframe时异常: {e}")
+            return False
+    
+    async def _process_iframe_video(self, video_page, iframe_index) -> bool:
+        """处理specific iframe中的视频内容"""
+        try:
+            logger.info(f"🔧 处理iframe {iframe_index+1} 的视频内容...")
+            
+            # 方法1: JavaScript直接访问iframe内容
+            js_success = await self._iframe_javascript_method(video_page, iframe_index)
+            if js_success:
+                return True
+            
+            # 方法2: Playwright frame locator
+            frame_success = await self._iframe_frame_locator_method(video_page, iframe_index)
+            if frame_success:
+                return True
+            
+            # 方法3: 延迟重试
+            logger.info("🔄 延迟后重试...")
+            await asyncio.sleep(5)
+            retry_success = await self._iframe_javascript_method(video_page, iframe_index)
+            if retry_success:
+                return True
+            
+            return False
+            
+        except Exception as e:
+            logger.error(f"❌ 处理iframe视频内容时异常: {e}")
+            return False
+    
+    async def _iframe_javascript_method(self, video_page, iframe_index) -> bool:
+        """使用JavaScript方法处理iframe内容"""
+        try:
+            result = await video_page.evaluate(f"""
+                (index) => {{
+                    const iframe = document.querySelectorAll('iframe')[index];
+                    if (!iframe) return {{ success: false, error: 'iframe不存在' }};
+                    
+                    try {{
+                        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                        if (!iframeDoc) {{
+                            return {{ success: false, error: '跨域iframe', crossOrigin: true }};
+                        }}
+                        
+                        // 优先处理按钮点击 - 增强版，专门处理发现的div按钮
+                        const allButtons = [
+                            ...iframeDoc.querySelectorAll('button'),
+                            ...iframeDoc.querySelectorAll('div[onclick]'), 
+                            ...iframeDoc.querySelectorAll('.btn'),
+                            ...iframeDoc.querySelectorAll('[class*="play"]'),
+                            // 专门添加发现的按钮类
+                            ...iframeDoc.querySelectorAll('.user_choise'),  // 发现的"开始学习"按钮
+                            ...iframeDoc.querySelectorAll('.continue'),     // 发现的"继续学习"相关按钮
+                            ...iframeDoc.querySelectorAll('div[style*="cursor: pointer"]'), // 光标为pointer的div
+                        ];
+                        
+                        // 按优先级排序和点击
+                        const candidates = [];
+                        for (let btn of allButtons) {{
+                            const text = btn.textContent?.trim() || '';
+                            const style = iframeDoc.defaultView.getComputedStyle(btn);
+                            const rect = btn.getBoundingClientRect();
+                            
+                            // 更全面的可点击判断
+                            const isClickable = (
+                                btn.onclick || 
+                                btn.className.includes('btn') || 
+                                btn.className.includes('user_choise') ||
+                                btn.className.includes('continue') ||
+                                style.cursor === 'pointer' ||
+                                btn.tagName === 'BUTTON'
+                            );
+                            
+                            if (rect.width > 0 && rect.height > 0 && (
+                                text.includes('继续学习') || text.includes('开始学习') || 
+                                text.includes('播放') || text.includes('play') ||
+                                btn.className.includes('user_choise') || // 专门处理发现的类名
+                                btn.className.includes('continue')
+                            )) {{
+                                candidates.push({{
+                                    element: btn,
+                                    text: text,
+                                    priority: text.includes('开始学习') ? 5 : 
+                                             text.includes('继续学习') ? 4 : 
+                                             text.includes('播放') ? 3 :
+                                             btn.className.includes('user_choise') ? 4 :
+                                             btn.className.includes('continue') ? 3 : 1,
+                                    isClickable: isClickable,
+                                    className: btn.className
+                                }});
+                            }}
+                        }}
+                        
+                        // 按优先级排序
+                        candidates.sort((a, b) => b.priority - a.priority);
+                        
+                        for (let candidate of candidates) {{
+                            try {{
+                                candidate.element.click();
+                                return {{ 
+                                    success: true, 
+                                    method: 'enhanced_button_click', 
+                                    text: candidate.text,
+                                    className: candidate.className,
+                                    priority: candidate.priority
+                                }};
+                            }} catch (e) {{
+                                console.log('点击失败:', e);
+                            }}
+                        }}
+                        
+                        // 如果按钮点击失败，尝试直接播放视频作为备用方案
+                        const videos = iframeDoc.querySelectorAll('video');
+                        if (videos.length > 0) {{
+                            for (let video of videos) {{
+                                if (video.paused) {{
+                                    try {{
+                                        video.play();
+                                        return {{ success: true, method: 'direct_play_fallback', count: videos.length }};
+                                    }} catch (e) {{
+                                        console.log('直接播放视频失败:', e);
+                                    }}
+                                }}
+                            }}
+                        }}
+                        
+                        return {{ success: false, error: '未找到可操作元素', videos: videos.length, buttons: allButtons.length }};
+                        
+                    }} catch (e) {{
+                        return {{ success: false, error: e.message }};
+                    }}
+                }}
+            """, iframe_index)
+            
+            if result['success']:
+                logger.info(f"✅ JavaScript方法成功: {result['method']}")
+                if 'text' in result:
+                    logger.info(f"   点击了: {result['text']}")
+                elif 'count' in result:
+                    logger.info(f"   播放了 {result['count']} 个视频")
+                return True
+            else:
+                logger.warning(f"❌ JavaScript方法失败: {result['error']}")
+                if not result.get('crossOrigin') and ('videos' in result or 'buttons' in result):
+                    logger.info(f"   iframe内容: {result.get('videos', 0)}个视频, {result.get('buttons', 0)}个按钮")
+                return False
+                
+        except Exception as e:
+            logger.error(f"❌ JavaScript方法异常: {e}")
+            return False
+    
+    async def _iframe_frame_locator_method(self, video_page, iframe_index) -> bool:
+        """使用Playwright frame locator处理iframe"""
+        try:
+            iframe_selector = f"iframe:nth-child({iframe_index + 1})"
+            frame = video_page.frame_locator(iframe_selector)
+            
+            # 尝试找到并点击视频
+            video_count = await frame.locator('video').count()
+            if video_count > 0:
+                logger.info(f"🎬 frame locator发现 {video_count} 个视频")
+                video = frame.locator('video').first
+                if await video.is_visible():
+                    await video.click()
+                    logger.info("✅ frame locator点击了视频")
+                    return True
+            
+            # 尝试找到并点击播放按钮
+            selectors = [
+                'button:has-text("继续学习")', 'button:has-text("开始学习")',
+                'button:has-text("播放")', 'div:has-text("继续学习")',
+                '.play-btn', '.continue-btn', '[class*="play"]'
+            ]
+            
+            for selector in selectors:
+                try:
+                    count = await frame.locator(selector).count()
+                    if count > 0:
+                        element = frame.locator(selector).first
+                        if await element.is_visible():
+                            await element.click()
+                            logger.info(f"✅ frame locator点击了 '{selector}'")
+                            return True
+                except Exception as e:
+                    logger.debug(f"尝试 '{selector}' 失败: {e}")
+                    continue
+            
+            return False
+            
+        except Exception as e:
+            logger.warning(f"❌ Frame locator方法失败: {e}")
+            return False
     
     async def pause(self) -> bool:
         """暂停视频"""
